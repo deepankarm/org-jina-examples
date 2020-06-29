@@ -60,11 +60,13 @@ Our example program will be a simple neural search engine for text. It will take
 * [Requirements and set up](chapters/03_requirements.md)
 * [Files and folders](chapters/04_files.md)
 * [Prepare data](chapters/05_prep_data.md)
-* [Define Flows](chapters/06_define_flows.md)
-* [Write your app](chapters/write_app.md)
-* [Run Flows](chapters/07_run_flows.md)
+* [Index data]
 * [Monitor progress](chapters/08_dashboard.md)
-* [Dive into Pods](chapters/09_pods.md)
+* [Query data]
+* [Run in your browser] - with jinabox
+* # [Define Flows](chapters/06_define_flows.md)
+* # [Write your app](chapters/write_app.md)
+* # [Run Flows](chapters/07_run_flows.md)
 * [Wrap up](chapters/10_wrap_up.md)
 
 ## To Add
@@ -73,7 +75,7 @@ Our example program will be a simple neural search engine for text. It will take
 
 ## Next Tutorial Set: Dig Deeper
 
-* Dive into Pods (move from this tutorial)
+* [Dive into Pods](chapters/09_pods.md)
 * Run your encoding remotely
 * Run Jina in Docker
 * Scale up
