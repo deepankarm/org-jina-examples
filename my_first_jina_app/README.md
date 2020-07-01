@@ -63,7 +63,7 @@ Our example program will be a simple neural search engine for text. It will take
 * [Index data]
 * [Monitor progress](chapters/08_dashboard.md)
 * [Query data]
-* [Run in your browser] - with jinabox
+* [Run in your browser](chapters/run_browser.md)
 * # [Define Flows](chapters/06_define_flows.md)
 * # [Write your app](chapters/write_app.md)
 * # [Run Flows](chapters/07_run_flows.md)
