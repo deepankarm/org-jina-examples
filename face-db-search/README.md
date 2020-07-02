@@ -33,7 +33,7 @@
 
 </p>
 
-In this demo, we use the  Labeled Faces in the Wild (LFW) Dataset data from [http://vis-www.cs.umass.edu/lfw/lfw.tgz](http://vis-www.cs.umass.edu/lfw/#download) to build a face search system so one can run facial search on their own dataset. Make sure you have gone through our lovely [Jina 101](https://github.com/jina-ai/jina/tree/master/docs/chapters/101) and understood the [take-home-message](https://github.com/jina-ai/examples/tree/master/urbandict-search#wrap-up) in [our bert-based semantic search demo](https://github.com/jina-ai/examples/tree/master/urbandict-search) before moving on. 
+In this demo, we use the Labeled Faces in the Wild (LFW) dataset from [the University of Massachusetts](http://vis-www.cs.umass.edu/lfw/#download) to build a search system so you can run a facial search on your own dataset. Make sure you've gone through [Jina 101](https://github.com/jina-ai/jina/tree/master/docs/chapters/101) and understood the [take-home-message](https://github.com/jina-ai/examples/tree/master/urbandict-search#wrap-up) in [our bert-based semantic search demo](https://github.com/jina-ai/examples/tree/master/urbandict-search) before moving on. 
 
   
 
@@ -86,7 +86,7 @@ pip install -r requirements.txt
 
 
 ## Prepare the data
-In total, there are more than 13,000 images of faces. 1680 of the people pictured have two or more distinct photos in the data set.[LFW Dataset](http://vis-www.cs.umass.edu/lfw/#explore) dataset. The following script will download the data and uncompress it into `/tmp/jina/celeb/lfw`.
+In total, there are over 13,000 images of faces. 1,680 of the people pictured have two or more distinct photos in the [LFW Dataset](http://vis-www.cs.umass.edu/lfw/#explore). The following script will download the data and decompress it into `/tmp/jina/celeb/lfw`.
 
 ```bash
 cd face-db-seach
@@ -95,7 +95,7 @@ bash ./get_data.sh
 
 ## Define the Flows
 
-We start with defining the index and the query Flows  with the YAML files as following. If you found a bit confusing with the YAML files, we highly suggest to go through our [bert-based semantic search demo](https://github.com/jina-ai/examples/tree/master/urbandict-search) before moving forward.
+We start by defining the index and query Flows with the YAML files as follows: If you find it the YAML files a bit confusing, we highly recommend you go through our [bert-based semantic search demo](https://github.com/jina-ai/examples/tree/master/urbandict-search) before moving forwards.
 
 <table style="margin-left:auto;margin-right:auto;">
 <tr>
@@ -202,18 +202,18 @@ pods:
 </tr>
 </table>
 
-Let's have a look at the index Flow. As the same as in the [bert-based semantic search demo](https://github.com/jina-ai/examples/tree/master/urbandict-search), we define a two pathway Flow for indexing. For each image, we put the image file name in the request message and thus each image is considered as a Document. The `loader` Pod reads the image file and save the image's RGB values into the Chunk. Note that in this case, we have only one Chunk for each Document. 
+Let's look at the index Flow: Just like the [bert-based semantic search demo](https://github.com/jina-ai/examples/tree/master/urbandict-search), we define a two pathway Flow for indexing. For each image, we put the image filename in the request message so each image is considered a Document. The `loader` Pod reads the image file and saves the image's RGB values into the Chunk. Note that in this case we have only one Chunk per Document. 
 
-Afterwards, the Flow splits into two parallel pathways. In the pathway on the left side, the `normalizer` Pod resizes and normalizes the image in the Chunks so that in the downstreaming Pods they can be properly handled. Followed by the `chunk_indexer`, the `encoder` Pod encodes the Chunks into vectors, which will be further saved into the index by the `chunk_indexer` Pod. 
+Afterwards, the Flow splits into two parallel pathways. In the pathway on the left, the `normalizer` Pod resizes and normalizes the image in the Chunks so they can be properly handled in the downstream Pods. The `encoder` Pod encodes the Chunks into vectors, which are then saved into the index by the `chunk_indexer` Pod. 
 
-In the other pathway, the `doc_indexer` Pod uses the key-value storage to save the Document IDs and the Document contents, i.e. the image file names. At the end, the `join_all` Pod merges the results from the `chunk_indexer` and the `doc_indexer`. In this case, the `join_all` Pods simply wait for the both incoming messages arrived because neither of the upstreaming Pods write into the request message.
+In the other pathway, the `doc_indexer` Pod uses key-value storage to save the Document IDs and Document contents, i.e. the image filenames. At the end, the `join_all` Pod merges the results from the `chunk_indexer` and `doc_indexer`. In this case, the `join_all` Pods simply wait for both incoming messages to arriv because neither of the upstream Pods write into the request message.
 
-The two-pathway Flow, as a common practice in jina, is designed to storage the vectors and the Documents independently and in parallel. Of course, one can squeeze the two pathways into one pathway by concating the `doc_indexer` after the `chunk_indexer` and removing `join_all` Pod. However, this will slow down the index process. 
+The double-pathway Flow, as a common practice in Jina, stores the vectors and the Documents independently and in parallel. Of course, you can squeeze the two pathways into one by concatenating `doc_indexer` after `chunk_indexer` and removing the `join_all` Pod. However, this will slow down the indexing process. 
 
-As for the query Flow, it is pretty much the same as the index Flow, and thereafter we won't be too verbose to iterate. You might have notice that there is something new in the YAML files. Let's dig into them!
+For the query Flow, it's pretty much the same as the index Flow, so we don't really need go into it too much. You may have noticeed there's something new in the YAML files. Let's dig into them!
 
 ### Hello, Docker!🐳
-In the YAML file, we add the `encoder` Pod in a different way from the other Pods. Instead of using the YAML file to config the Pods, we define the `encoder` with a Docker image with the `image` argument. By doing this, we will have the `encoder` Pod running in a Docker container. This is one key feature of jina. By wrapping the Pods into the docker image, we can safely forget about the complicated dependency and environment setting that are required to run the Pods. 
+In the YAML file, we add the `encoder` Pod differently to the other Pods. Instead of using the YAML file to configure the Pods, we define the `encoder` with a Docker image using the `image` argument. By doing this, we have the `encoder` Pod running in its own Docker container. This is a key feature of Jina. By wrapping Pods into a Docker image, we can safely forget about complicated dependencies and environment settings required to run the Pods. 
 
 
 ```yaml
@@ -223,11 +223,11 @@ pods:
     image: jinaai/hub.executors.encoders.image.facenet
 ```
 
-This way we can pass the image  tag of docker container containing the Encoder
+This way we can pass the image tag of the Docker container containing the Encoder
 
 ## <a name="custom-encoder">Custom Encoder</a>
 
-Jina has a documentation on using the available Executors and overiding them with Custom Executor according to your needs. Here we build a custom encoder using [FaceNet](https://arxiv.org/abs/1503.03832).
+Jina has documentation on using available Executors and overriding them with a Custom Executor according to your needs. Here we build a custom Encoder using [FaceNet](https://arxiv.org/abs/1503.03832).
 
 ### Write Custom YAML File
 
@@ -249,8 +249,8 @@ requests:
           method: encode
 ```
 
-The tags in 'with' are passed down to the FaceNetEncoder.py class as parameters.
-The 'py_modules' tag define the Python Class containing your encoder logic. The class should override an existing Executor.
+The tags in `with` are passed to FaceNetEncoder.py class as parameters.
+The 'py_modules' tag defines the Python Class containing your Encoder logic. The class should override an existing Executor.
 
 ### Dockerfile
 
@@ -271,9 +271,9 @@ ENTRYPOINT ["jina", "pod", "--yaml-path", "encode.yml"]
 
 ```
 
-The docker can be made on jina[devel] or any other image (pytorch in this case). We add dependancies such as jina , opencv etc. The model weights are downloaded and cached in the 'RUN python -c ...' command. The entrypoint runs this container as a jina pod. All arguments of jina pod can be overrideen during runtime ( such as specifying another yaml file).
+Docker can be made on jina[devel] or any other image (pytorch in this case). We add dependancies like jina, opencv etc. The model weights are downloaded and cached in the 'RUN python -c ...' command. The entrypoint runs this container as a Jina Pod. You can override all the arguments of the Jina Pod during runtime (like specifying another YAML file).
 
-We build this docker using the following command :
+We build this Docker image with the following command:
 
 
 ```bash
@@ -281,12 +281,12 @@ docker build -t jinaai/hub.executors.encoders.image.facenet .
 
 ```
 
-Once built , we can pass this image tag to the Flow API.
+Once built, we can pass this image tag to the Flow API.
 
 
 ## Run the Flows
 ### Index 
-Now we start indexing with the following command.
+Now we start indexing with the following command:
  
 ```bash
 python app.py index
@@ -301,7 +301,7 @@ python app.py index
 
 </details> 
 
-Here we use the YAML file to define a Flow and use it to index the data. The `index_files()` function load the image file names in the format of `bytes`, which will be further wrapped in an `IndexRequest` and send to the Flow. 
+Here we define the flow in the YAML file and use it to index the data. The `index_files()` function loads the image filenames in the format of `bytes`, which will be further wrapped in an `IndexRequest` and sent to the Flow. 
 
 ```python
 from jina.flow import Flow
@@ -312,7 +312,8 @@ with f:
 
 ### Query
 
-In Jina , Querying images located in 'image_src' folder is as simple as the following command.
+In Jina, Querying images located in `image_src` folder is as simple as the following command:
+
 'print_result' is the callback function used. Here the top k (here k=5) is returned. In this example, we use the meta_info tag in response to create the image. 
 
 ```python
@@ -322,14 +323,14 @@ with f:
     f.search_files(image_src, sampling_rate=.01, batch_size=8, output_fn=print_result, top_k=5)
 ```
 
-Run the following command to search images and display in a webpage.
+Run the following command to search images and display them in a web page.
 
 ```bash
 python make_html.py
 ```
 
 <details>
-<summary>Click here to see result of old API</summary>
+<summary>Click here to see result of the old API</summary>
 
 <p align="center">
   <img src=".github/query-demo.png?raw=true" alt="query flow console output">
@@ -339,16 +340,16 @@ python make_html.py
 
 <img src=".github/face-demo.jpg" alt="query flow console output">
 </p>
-Note : We have only used 500 images with only one or two images of each person. Hence the results are only as good as the database you have. It returns the closest matching face in the dataset.
+Note: We have used only 500 images with only one or two images per person. Hence the results are only as good as the database you have. It returns the closest-matching face in the dataset.
 
 <br /><br />
 
-Congratulations! Now you have an image search engine working at hand. We won't go into details of the Pods' YAML files because they are quite self explained. If you feel a bit lost when reading the YAML files, please check out the [bert-based semantic search demo](https://github.com/jina-ai/examples/tree/master/urbandict-search#dive-into-the-pods).
+Congratulations! Now you have an image search engine in your hands. We won't go into the details of the Pods' YAML files because they are quite self-explanatory. If you feel a bit lost when reading the YAML files, please check out the [bert-based semantic search demo](https://github.com/jina-ai/examples/tree/master/urbandict-search#dive-into-the-pods).
 
 ## Next Steps
 
 - Write your own executors.
-- Check out the docker images at the Jina hub.
+- Check out the Docker images at the Jina Hub.
 
 ## Documentation 
 
