@@ -5,13 +5,12 @@ import sys
 
 from jina.flow import Flow
 
-num_docs = os.environ.get('MAX_DOCS', 50000)
+num_docs = os.environ.get('MAX_DOCS', 5000)
+data_path = os.path.join('data','character-lines.csv')
 
 def config():
     replicas = 2 if sys.argv[1] == 'index' else 1
-    # shards = 8
-    # We're working with a tiny dataset, so smaller number of shards for now
-    shards = 1
+    shards = 2 # South park example uses 2
 
     os.environ['REPLICAS'] = str(replicas)
     os.environ['SHARDS'] = str(shards)
@@ -19,32 +18,12 @@ def config():
     os.makedirs(os.environ['WORKDIR'], exist_ok=True)
     os.environ['JINA_PORT'] = os.environ.get('JINA_PORT', str(65481))
 
-    # Set to a fixed port I hope
-    os.environ['JINA_PORT'] = str(44444)
-
-# for loading data
-
-def load_data(filename="text.csv"):
-    # import csv
-    lines = []
-    with open(filename) as file:
-        for line in file:
-            lines.append(line)
-
-    print(lines)
-
-    return lines
-
-
 # for index
 def index():
     f = Flow.load_config('flows/index.yml')
 
     with f:
-        # f.index_lines(['abc', 'cde', 'efg'], batch_size=64, read_mode='r', size=num_docs)
-
-        # Load South Park dataset
-        f.index_lines(load_data('data/character-lines.csv'), batch_size=64, read_mode='r', size=num_docs)
+        f.index_lines(filepath=data_path, batch_size=8, read_mode='r', size=num_docs)
 
     # for search
 def search():
@@ -75,7 +54,5 @@ if __name__ == '__main__':
     elif sys.argv[1] == 'dryrun':
         config()
         dryrun()
-    elif sys.argv[1] == 'data':
-        load_data()
     else:
         raise NotImplementedError(f'unsupported mode {sys.argv[1]}')
