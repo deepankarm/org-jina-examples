@@ -78,6 +78,9 @@ First up we need to build up an index of our file, which is what we search:
 python app.py index
 ```
 
+<details>
+<summary>Click here to see the console output</summary>
+
 <p align="center">
   <img src="images/index-demo.png?raw=true" alt="index flow console output">
 </p>
@@ -86,9 +89,23 @@ python app.py index
 
 ### Search Mode
 
+Just run:
+
 ```bash
 python app.py search
 ```
+
+### Actually Searching
+
+Now that the app is running in search mode, we can search from the command line with `curl`:
+
+```bash
+curl --request POST -d '{"top_k": 10, "mode": "search",  "data": ["text:hey, dude"]}' -H 'Content-Type: application/json' 'http://0.0.0.0:45678/api/search'
+```
+
+Or from `jinabox.js`. You can refer back to that [section of our docs](./section_1.md) to get jinabox running your browser.
+
+![](https://raw.githubusercontent.com/jina-ai/jinabox.js/master/.github/jinabox.gif)
 
 <details>
 <summary>Click here to see the console output</summary>
@@ -98,15 +115,3 @@ python app.py search
 </p>
 
 </details>
-
-### Actually Searching
-
-Now that the app is running in query mode, we can search from the command line with `curl`:
-
-```bash
-curl --request POST -d '{"top_k": 10, "mode": "search",  "data": ["text:hey, dude"]}' -H 'Content-Type: application/json' 'http://0.0.0.0:45678/api/search'
-```
-
-Or from `jinabox.js`. You can refer back to that [section of our docs](./section_1.md) to get jinabox running your browser.
-
-![](https://raw.githubusercontent.com/jina-ai/jinabox.js/master/.github/jinabox.gif)
