@@ -78,14 +78,6 @@ For our South Park example, we recommend the following settings:
 
 All other fields you can just fill in however you please.
 
-### Install Requirements
-
-In your terminal:
-
-```
-cd south_park
-pip install -r requirements.txt
-```
 ## Files and Folders
 
 After running `cookiecutter`, you should see a bunch of files in the `south_park` folder:
@@ -102,3 +94,14 @@ After running `cookiecutter`, you should see a bunch of files in the `south_park
 In the `flows/` folder we can see `index.yml` and `query.yml` - these define the indexing and querying Flows for your app.
 
 In `pods/` we see `chunk.yml`, `craft.yml`, `doc.yml`, and `encode.yml` - these Pods are called from the Flows to process data for indexing or querying.
+
+### Install Requirements
+
+In your terminal:
+
+```
+cd south_park
+pip install -r requirements.txt
+```
+
+All done? Now we can start editing these files to index and query our South Park data!
