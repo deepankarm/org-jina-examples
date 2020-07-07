@@ -47,7 +47,6 @@ You'll need:
 * Basic knowledge of Python
 * Python 3.7 or higher installed, and pip
 * A Mac or Linux computer (we don't currently support Windows)
-* A GPU (machine learning won't run quickly without it)
 * 8 gigabytes or more of RAM
 * Plenty of time - Indexing can take a while!
 
@@ -64,13 +63,11 @@ cd tutorial
 
 ### Cookiecutter
 
-We use [cookiecutter](https://github.com/cookiecutter/cookiecutter) to spin up a basic Jina app to save you having to do a lot of typing and setup. In your terminal, install cookiecutter with:
+We use [cookiecutter](https://github.com/cookiecutter/cookiecutter) to spin up a basic Jina app to save you having to do a lot of typing and setup. Install cookiecutter and create a new Jina project with:
 
 ```
 pip install -U cookiecutter && cookiecutter gh:jina-ai/cookiecutter-jina
 ```
-
-And then generate a Jina project:
 
 For our South Park example, we recommend the following settings:
 
