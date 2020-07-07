@@ -4,7 +4,7 @@
 
 In this series of tutorials we'll guide you on the process of building your own Jina search app. Don't worry if you're new to machine learning or search. We'll spell it all out right here.
 
-Our example program will be a simple neural search engine for text. It will take a user's typed input, and return a list of lines from South Park that match most closely. In our example case, it will search all the lines of South Park dialog
+Our example program will be a simple neural search engine for text. It will take a user's typed input, and return a list of lines from South Park that match most closely.
 
 ## Contents
 
