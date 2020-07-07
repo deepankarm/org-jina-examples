@@ -12,13 +12,16 @@ I want a logical flow for new users. Right now it goes:
 5. First practical example is [South Park search](https://github.com/jina-ai/examples/tree/master/southpark-search) which barely references the complex stuff above
 6. And then more tutorials that start from almost scratch and introduce new features/search media each time, never referencing South Park tutorial
 
+And then we mention cookiecutter on our README as well! And that doesn't do things the same way as our existing examples!
+
+Based on feedback from team members like Bing and Lucia (feel free to chip in if I'm wrong - I don't want to misrepresent you!), we need a simpler on boarding process.
+
 My idea:
 
-1. Jina 101: What is Jina, and why use neural search?
-2. Jina 102: Meet the Jina family (i.e. how Jina works)
+2. Jina 102: Meet the Jina family (i.e. how Jina works) - if ppl are unclear on what neural search is, we have a blog post about it
 3. Hello world - with Jinabox
-4. Build your first Jina app - get started with a real example that performs a real task on existing data (i.e. this tutorial I'm writing now)
-5. Further tutorials that expand on that first app (e.g. running in Docker, hosting online)
+4. Build your first Jina app - get started with a real example that performs a real task on existing data (i.e. this tutorial I'm writing now, based on South Park)
+5. Further tutorials that expand on that first app (e.g. running in Docker, hosting online, all based on "My First Jina App"). Let's not confuse things by adding new use cases (e.g. image search) AND new features (e.g. Docker) at the same time.
 6. Other tutorials (e.g. image/video search) build on the above tutorial but just adapt it for other media, not introduce too many new concepts
 
 ## Broken down
@@ -55,19 +58,11 @@ Our example program will be a simple neural search engine for text. It will take
 
 ## Contents
 
-* [Key concepts](chapters/01_concepts.md)
-* [Try it out!](chapters/02_try_it.md)
-* [Requirements and set up](chapters/03_requirements.md)
-* [Files and folders](chapters/04_files.md)
-* [Prepare data](chapters/05_prep_data.md)
-* [Index data]
-* [Monitor progress](chapters/08_dashboard.md)
-* [Query data]
-* [Run in your browser](chapters/run_browser.md)
-* # [Define Flows](chapters/06_define_flows.md)
-* # [Write your app](chapters/write_app.md)
-* # [Run Flows](chapters/07_run_flows.md)
-* [Wrap up](chapters/10_wrap_up.md)
+1. [Set up](chapters/01_setup.md)
+2. [Run Jina](chapters/02_run.md)
+3. [Troubleshooting](chapters/03_troubleshooting.md)
+4. [Understanding](chapters/04_understanding.md)
+5. [Wrap up]() - not done yet
 
 ## To Add
 
@@ -75,7 +70,8 @@ Our example program will be a simple neural search engine for text. It will take
 
 ## Next Tutorial Set: Dig Deeper
 
-* [Dive into Pods](chapters/09_pods.md)
+Buid upon our current project (South Park search with cookiecutter):
+
 * Run your encoding remotely
 * Run Jina in Docker
 * Scale up
