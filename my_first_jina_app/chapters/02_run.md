@@ -17,7 +17,7 @@ Season,Episode,Character,Line
 10,1,Chef,"I'm sorry boys.
 ```
 
-Or, in a more human-readable format:
+If you're a human and want to read that more easily:
 
 | Season | Episode | Character | Line                                    | 
 | ---    | ---     | ---       | ---                                     | 
@@ -26,7 +26,7 @@ Or, in a more human-readable format:
 | 10     | 1       | Stan      | "Forever.                               | 
 | 10     | 1       | Chef      | "I'm sorry boys.                        | 
 
-Now let's ensure we're back in our repo's base folder (from the repo you cloned, *not* the `south_park` folder) and get this dataset by running:
+Now let's ensure we're back in our base folder (from the repo you cloned, *not* the `south_park` folder) and download this dataset by running:
 
 ```bash
 bash ./get_data.sh
@@ -34,7 +34,7 @@ bash ./get_data.sh
 
 ## Load the Data
 
-Now that we've got the data, we need to pass it into `app.py`. The file is pretty simple out of the box, so we'll have to make some changes:
+Now that we've got the data, we need to pass it into `app.py`. `app.py` is pretty simple out of the box, so we'll have to make some changes:
 
 On line 25, we've got the line:
 
