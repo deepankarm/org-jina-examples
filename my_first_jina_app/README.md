@@ -12,9 +12,9 @@ Our example program will be a simple neural search engine for text. It will take
 2. [Run Jina](chapters/02_run.md)
 3. [Troubleshooting](chapters/03_troubleshooting.md)
 4. [Understanding](chapters/04_understanding.md)
-5. [Wrap up]() - not done yet
+5. [Wrap up](05_wrap_up.md) - not done yet
 
-Need support? First check out our [troubleshooting section](chapters/03_troubleshooting.md). If that doesn't work, hit up our #support channel on our [Slack](https://jina-ai.slack.com/)!
+Need support? First check out our [troubleshooting section](chapters/03_troubleshooting.md). If that doesn't work, hit up our #support channel on our [Slack](https://jina-ai.slack.com/messages/support/)!
 
 ## Next Up Set: Dig Deeper
 
