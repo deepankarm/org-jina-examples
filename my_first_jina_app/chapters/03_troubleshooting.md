@@ -4,6 +4,12 @@
 
 Be sure to run `pip install -r requirements.txt` before beginning, and ensure you have lots of RAM/swap and space in your `tmp` partition (see below issues). This may take a while since there are a lot of prerequisites to install.
 
+If this error still keeps popping up, look into the error logs to try to find which module it's talking about, and then run:
+
+```shell
+pip install <module_name>
+```
+
 
 ### My Computer Hangs
 
