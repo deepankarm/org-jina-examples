@@ -47,11 +47,11 @@ Based on feedback from team members like Bing and Lucia (feel free to chip in if
 
 My idea:
 
-2. Jina 102: Meet the Jina family (i.e. how Jina works) - if ppl are unclear on what neural search is, we have a blog post about it
-3. Hello world - with Jinabox
-4. Build your first Jina app - get started with a real example that performs a real task on existing data (i.e. this tutorial I'm writing now, based on South Park)
-5. Further tutorials that expand on that first app (e.g. running in Docker, hosting online, all based on "My First Jina App"). Let's not confuse things by adding new use cases (e.g. image search) AND new features (e.g. Docker) at the same time.
-6. Other tutorials (e.g. image/video search) build on the above tutorial but just adapt it for other media, not introduce too many new concepts
+1. Jina 102: Meet the Jina family (i.e. how Jina works) - if ppl are unclear on what neural search is, we have a blog post about it
+2. Hello world - with Jinabox
+3. Build your first Jina app - get started with a real example that performs a real task on existing data (i.e. this tutorial I'm writing now, based on South Park)
+4. Further tutorials that expand on that first app (e.g. running in Docker, hosting online, all based on "My First Jina App"). Let's not confuse things by adding new use cases (e.g. image search) AND new features (e.g. Docker) at the same time.
+5. Other tutorials (e.g. image/video search) build on the above tutorial but just adapt it for other media, not introduce too many new concepts
 
 ## Broken down
 
