@@ -18,7 +18,7 @@ Need support? First check out our [troubleshooting section](chapters/03_troubles
 
 ## Next Up Set: Dig Deeper
 
-You've got one project under your belt. Nice! Stay tuned to expand South Park search even further:
+If you've gone through the above steps you've already got one project under your belt. Nice! Stay tuned to expand South Park search even further:
 
 * Run your encoding remotely
 * Run Jina in Docker
@@ -29,7 +29,7 @@ You've got one project under your belt. Nice! Stay tuned to expand South Park se
 
 # Notes
 
-This is a different approach to tutorials. Instead of many tutorials to do and explain different things, I want:
+This is a different approach to our existing tutorials. Instead of many tutorials to do and explain different things, I want:
 
 ## One simple tutorial to rule them all
 
