@@ -6,7 +6,7 @@ Be sure to run `pip install -r requirements.txt` before beginning, and ensure yo
 
 If this error still keeps popping up, look into the error logs to try to find which module it's talking about, and then run:
 
-```shell
+```sh
 pip install <module_name>
 ```
 
@@ -30,6 +30,6 @@ This is often due to your `/tmp` partition running out of space so you'll need t
 
 For any of these errors you'll need to install the package onto your system. In Ubuntu this can be done with:
 
-```shell
+```sh
 sudo apt-get install <package_name>
 ```
