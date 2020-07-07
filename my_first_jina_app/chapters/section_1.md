@@ -2,11 +2,13 @@
 
 ## Key Concepts
 
-First of all, read up on [Jina 101]() and [102]() so you have a clear understanding of how Jina works. We're going to refer to those concepts a lot. We assume you already have some knowledge of Python and machine learning.
+First of all, read up on [Jina 101](https://github.com/jina-ai/jina/tree/master/docs/chapters/101) so you have a clear understanding of how Jina works. We're going to refer to those concepts a lot. We assume you already have some knowledge of Python and machine learning.
 
 ## Try it Out!
 
-### With Docker
+Before actually download, configuring and testing your app, let's get an idea of the finished product:
+
+### Deploy with Docker
 
 We've prepared a Docker image with indexed data. You can run it with:
 
@@ -18,7 +20,9 @@ Check out more details about the Docker image [here](rest-api/README.md).
 
 Note: You'll need to run the Docker image before trying the steps below
 
-#### Querying with Jinabox
+#### Query with Jinabox
+
+![](https://raw.githubusercontent.com/jina-ai/jinabox.js/master/.github/jinabox.gif)
 
 1. Go to [jinabox](https://jina.ai/jinabox.js) in your browser
 2. Ensure you have the server endpoint set to `http://localhost:45678/api/search`
@@ -26,7 +30,7 @@ Note: You'll need to run the Docker image before trying the steps below
 
 Find out more about [jinabox.js](https://github.com/jina-ai/jinabox.js/), including how to use the front-end code in your own project.
 
-#### Querying with `curl`
+#### Query with `curl`
 
 Alternatively, you can open your shell and check the results via the RESTful API. The matched results are stored in `topkResults`.
 
