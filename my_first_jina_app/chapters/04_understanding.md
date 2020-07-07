@@ -29,7 +29,7 @@ In Jina 101, we discussed [Documents and Chunks](https://github.com/jina-ai/jina
 * Break our giant text file into sentences. We'll regard each sentence as a Document (For simplicity, each Document has only one Chunk, containing the same sentence as the Document)
 * Encode each sentence, as a Chunk, into a vector (in this case, using a Pod which specifies DistilBert from the [🤗Transformers library](https://huggingface.co/transformers))
 * Build indexes for each Chunk and Document for fast lookup
-* Store the vectors in our index
+* Store the vectors in our indexes
 
 Our Pods perform all the tasks needed to make this happen:
 
