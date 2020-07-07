@@ -27,7 +27,7 @@ Right now our data is just one big text file. Our Flow needs to process it into 
 In Jina 101, we discussed [Documents and Chunks](https://github.com/jina-ai/jina/tree/master/docs/chapters/101#document--chunk). In our indexing Flow, we:
 
 * Break our giant text file into sentences. We'll regard each sentence as a Document (For simplicity, each Document has only one Chunk, containing the same sentence as the Document)
-* Encode each sentence, as a Chunk, into a vector (in this case, DistilBert from the 🤗Transformers library)
+* Encode each sentence, as a Chunk, into a vector (in this case, using a Pod which specifies DistilBert from the 🤗Transformers library)
 * Build indexes for each Chunk and Document for fast lookup
 * Store the vectors in our index
 
