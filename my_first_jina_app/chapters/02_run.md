@@ -2,7 +2,7 @@
 
 ## Prepare the Data
 
-The goal of our project is to find out who said what in the South Park episodes when a user queries a sentence. The [SouthPark dataset](https://github.com/BobAdamsEE/SouthParkData/) contains the characters and lines from seasons 1 to 19. Many thanks to [BobAdamsEE](https://github.com/BobAdamsEE) for sharing this awesome dataset!👏
+Our goal is to find out who said what in South Park episodes when a user queries a phrase. The [SouthPark dataset](https://github.com/BobAdamsEE/SouthParkData/) contains the characters and lines from seasons 1 to 19. Many thanks to [BobAdamsEE](https://github.com/BobAdamsEE) for sharing this awesome resource!👏
 
 The raw data contains season, episode, character, and line information in the `.csv` format as follows:
 
