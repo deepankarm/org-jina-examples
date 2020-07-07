@@ -1,3 +1,33 @@
+# Building Your First Jina App
+
+## Introduction
+
+In this series of tutorials we'll guide you on the process of building your own Jina search app. Don't worry if you're new to machine learning or search. We'll spell it all out right here.
+
+Our example program will be a simple neural search engine for text. It will take a user's typed input, and return a list of lines from South Park that match most closely. In our example case, it will search all the lines of South Park dialog
+
+## Contents
+
+1. [Set up](chapters/01_setup.md)
+2. [Run Jina](chapters/02_run.md)
+3. [Troubleshooting](chapters/03_troubleshooting.md)
+4. [Understanding](chapters/04_understanding.md)
+5. [Wrap up]() - not done yet
+
+## To Add
+
+* Get Support - put this in early
+
+## Next Tutorial Set: Dig Deeper
+
+Buid upon our current project (South Park search with cookiecutter):
+
+* Run your encoding remotely
+* Run Jina in Docker
+* Scale up
+
+---
+
 # Notes
 
 This is a different approach to tutorials. Instead of many tutorials to do and explain different things, I want:
@@ -45,34 +75,3 @@ The South Park tutorial is really long already. By the time I adapt it to be "My
 ## Note: This is very much a work in progress
 
 None of the below is final. I need to add (and correct) info and will restructure as needed. This is just for an idea of where I'm going with the idea for now.
-
----
-
-# Building Your First Jina App
-
-## Introduction
-
-In this series of tutorials we'll guide you on the process of building your own Jina search app. Don't worry if you're new to machine learning or search. We'll spell it all out right here.
-
-Our example program will be a simple neural search engine for text. It will take a user's typed input, and return a list of lines from South Park that match most closely. In our example case, it will search all the lines of South Park dialog
-
-## Contents
-
-1. [Set up](chapters/01_setup.md)
-2. [Run Jina](chapters/02_run.md)
-3. [Troubleshooting](chapters/03_troubleshooting.md)
-4. [Understanding](chapters/04_understanding.md)
-5. [Wrap up]() - not done yet
-
-## To Add
-
-* Get Support - put this in early
-
-## Next Tutorial Set: Dig Deeper
-
-Buid upon our current project (South Park search with cookiecutter):
-
-* Run your encoding remotely
-* Run Jina in Docker
-* Scale up
-
