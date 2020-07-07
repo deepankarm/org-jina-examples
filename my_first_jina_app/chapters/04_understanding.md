@@ -1,10 +1,10 @@
 # My First Jina App: Understanding
 
-This is where we dive a little deeper to learn about what happens inside each Flow and how they're built up from Pods.
+This is where we dive a little deeper to learn what happens inside each Flow and how they're built up from Pods.
 
 ## Flows
 
-Everything in Jina is controlled by high-level Flows that coordinate tasks and components. We define Flows for indexing and querying the content in our South Park dataset.
+Everything in Jina is controlled by high-level [Flows](https://github.com/jina-ai/jina/tree/master/docs/chapters/101#flow) that coordinate tasks and components. We define Flows for indexing and querying the content in our South Park dataset in `app.py`.
 
 In this case we'll write our Flows in YAML format and load them into `app.py` with:
 
@@ -14,7 +14,7 @@ def index():
     f = Flow.load_config('flows/index.yml')
 ```
 
-It really is that simple! Alternatively you can build Flows in `app.py` itself without YAML.
+It really is that simple! Alternatively you can build Flows in `app.py` itself [without YAML](https://docs.jina.ai/chapters/flow/index.html).
 
 ### Indexing
 
