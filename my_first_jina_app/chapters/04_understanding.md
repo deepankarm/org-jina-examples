@@ -14,7 +14,7 @@ def index():
     f = Flow.load_config('flows/index.yml')
 ```
 
-It really is that simple! Alternatively you can build Flows in `app.py` itself [without YAML](https://docs.jina.ai/chapters/flow/index.html).
+It really is that simple! Alternatively you can build Flows in `app.py` itself [without specifying Flows in YAML](https://docs.jina.ai/chapters/flow/index.html).
 
 ### Indexing
 
@@ -22,7 +22,7 @@ Every Flow has well, a flow to it. Different Pods pass data along the Flow, with
 
 ![](images/index-flow.png)
 
-Right now our data is just one big text file. Our flow needs to process it into a useful state, which we do with Pods. Each Pod in the Flow performs a different task.
+Right now our data is just one big text file. Our Flow needs to process it into a useful state, which we do with Pods. Each Pod in the Flow performs a different task.
 
 In Jina 101, we discussed [Documents and Chunks](https://github.com/jina-ai/jina/tree/master/docs/chapters/101#document--chunk). In our indexing Flow, we:
 
