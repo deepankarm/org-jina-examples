@@ -14,17 +14,16 @@ Our example program will be a simple neural search engine for text. It will take
 4. [Understanding](chapters/04_understanding.md)
 5. [Wrap up]() - not done yet
 
-## To Add
+Need support? First check out our [troubleshooting section](chapters/03_troubleshooting.md). If that doesn't work, hit up our #support channel on our [Slack](https://jina-ai.slack.com/)!
 
-* Get Support - put this in early
+## Next Up Set: Dig Deeper
 
-## Next Tutorial Set: Dig Deeper
-
-Buid upon our current project (South Park search with cookiecutter):
+You've got one project under your belt. Nice! Stay tuned to expand South Park search even further:
 
 * Run your encoding remotely
 * Run Jina in Docker
 * Scale up
+* Search different things (images, videos, you name it)
 
 ---
 
