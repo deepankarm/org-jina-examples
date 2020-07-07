@@ -58,9 +58,8 @@ My idea:
 The South Park tutorial is really long already. By the time I adapt it to be "My First Jina App" it'll be even longer. I want to break it into smaller chunks to make it more digestible. This:
 
 * Allows for simpler linking - just link to that particular section
-* Delineates each section of tasks clearly (with traditional markdown links it's easy to know where something *starts* but easy to lose track of where it ends)
 * Is less intimidating: There's a *lot* of text and code and diagrams in some of those tutorials
-* Breaks down theory sections and practice sections. Current tutorials mingle the both
+* Breaks down theory sections and practical sections. Current tutorials mingle the both
 
 ## Uses our latest tech
 
