@@ -43,14 +43,14 @@ On line 25, we've got the line:
         f.index_lines(['abc', 'cde', 'efg'], batch_size=64, read_mode='rb', size=num_docs)
 ```
 
-Let's change this to:
+As you can see, this just indexes 3 strings. Let's load up our South Park file instead:
 
 ```python
     with f:
         f.index_lines(filepath='data/character-lines.csv', batch_size=8, read_mode='r', size=num_docs)
 ```
 
-While we're here, let's also reduce the number of documents we're indexing, just to speed things up while we're testing.
+While we're here, let's also reduce the number of documents we're indexing, just to speed things up while we're testing. We don't want to spend hours indexing only to have bugs later on!
 
 On line 17, let's change:
 
@@ -64,27 +64,27 @@ to:
 num_docs = os.environ.get('MAX_DOCS', 500)
 ```
 
-That should speed up our testing by a factor of 100. Once we've verified everything works we can set it back to `50000`
+That should speed up our testing by a factor of 100! Once we've verified everything works we can set it back to `50000` to index more of our dataset.
 
 ## Run the Flows
 
-Now we're going to dive into writing our app and running our Flows!
+Now that we've loaded our data, we're going to dive into writing our app and running our Flows!
 
 ### Index Mode
 
-Indexing can take a long time, so let's start small by indexing just 1,000 lines so we can see our results:
+First up we need to build up an index of our file, which is what we search:
 
 ```bash
-python app.py index -n 1000
+python app.py index
 ```
 
 <p align="center">
-  <img src=".github/index-demo.png?raw=true" alt="index flow console output">
+  <img src="images/index-demo.png?raw=true" alt="index flow console output">
 </p>
 
 </details>
 
-### Query Mode
+### Search Mode
 
 ```bash
 python app.py search
@@ -94,12 +94,12 @@ python app.py search
 <summary>Click here to see the console output</summary>
 
 <p align="center">
-  <img src=".github/query-demo.png?raw=true" alt="query flow console output">
+  <img src="images/query-demo.png?raw=true" alt="query flow console output">
 </p>
 
 </details>
 
-### Search
+### Actually Searching
 
 Now that the app is running in query mode, we can search from the command line with `curl`:
 
@@ -110,4 +110,3 @@ curl --request POST -d '{"top_k": 10, "mode": "search",  "data": ["text:hey, dud
 Or from `jinabox.js`. You can refer back to that [section of our docs](./section_1.md) to get jinabox running your browser.
 
 ![](https://raw.githubusercontent.com/jina-ai/jinabox.js/master/.github/jinabox.gif)
-
