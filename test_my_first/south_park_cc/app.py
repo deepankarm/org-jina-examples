@@ -5,7 +5,7 @@ import sys
 
 from jina.flow import Flow
 
-num_docs = os.environ.get('MAX_DOCS', 5000)
+num_docs = os.environ.get('MAX_DOCS', 50)
 data_path = os.path.join('data','character-lines.csv')
 
 def config():

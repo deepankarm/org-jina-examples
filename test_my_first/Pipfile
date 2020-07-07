@@ -1,0 +1,14 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+torch = "*"
+jina = {extras = ["devel"], version = "*"}
+transformers = "*"
+
+[requires]
+python_version = "3.8"
