@@ -259,9 +259,11 @@ As a convention in Jina, A YAML config is used to describe the properties of an 
 
 Let's start by looking at our indexing Flow, `flows/index.yml`. Instead of the first Pod `crafter`, let's look at `encoder` which is a bit simpler:
 
-```
+```yaml
 pods:
-...
+
+  <other pods here>
+
   encoder:
     yaml_path: pods/encode.yml
     replicas: $REPLICAS
