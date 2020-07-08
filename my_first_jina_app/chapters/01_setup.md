@@ -1,10 +1,10 @@
-# My First Jina App: Setup
+# 💾 My First Jina App: Setup
 
-## Key Concepts
+## 🗝️ Key Concepts
 
 First of all, read up on [Jina 101](https://github.com/jina-ai/jina/tree/master/docs/chapters/101) so you have a clear understanding of how Jina works. We're going to refer to those concepts a lot. We assume you already have some knowledge of Python and machine learning.
 
-## Try it Out!
+## 🧪 Try it Out!
 
 Before actually downloading, configuring and testing your app, let's get an idea of the finished product:
 
@@ -107,7 +107,7 @@ curl --request POST -d '{"top_k": 10, "mode": "search",  "data": ["text:hey, dud
 
 </details>
 
-## Install
+## 🐍 Install
 
 ### Prerequisites
 
@@ -147,7 +147,7 @@ For our South Park example, we recommend the following settings:
 
 All other fields you can just fill in however you please.
 
-## Files and Folders
+## 📂 Files and Folders
 
 After running `cookiecutter`, you should see a bunch of files in the `south_park` folder:
 
