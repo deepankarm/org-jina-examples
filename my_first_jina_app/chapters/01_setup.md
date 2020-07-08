@@ -6,7 +6,7 @@ First of all, read up on [Jina 101](https://github.com/jina-ai/jina/tree/master/
 
 ## Try it Out!
 
-Before actually download, configuring and testing your app, let's get an idea of the finished product:
+Before actually downloading, configuring and testing your app, let's get an idea of the finished product:
 
 ### Deploy with Docker
 
