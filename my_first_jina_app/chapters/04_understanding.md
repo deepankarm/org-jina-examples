@@ -1,10 +1,10 @@
 # My First Jina App: Understanding
 
-This is where we dive a little deeper to learn what happens inside each Flow and how they're built up from Pods.
+This is where we dive deeper to learn what happens inside each Flow and how they're built up from Pods.
 
 ## Flows
 
-Everything in Jina is controlled by high-level [Flows](https://github.com/jina-ai/jina/tree/master/docs/chapters/101#flow) that coordinate tasks and components. We define Flows for indexing and querying the content in our South Park dataset in `app.py`.
+Everything in Jina is controlled by high-level [Flows](https://github.com/jina-ai/jina/tree/master/docs/chapters/101#flow) that coordinate tasks and components. We define Flows in `app.py` to index and query the content in our South Park dataset.
 
 In this case we'll write our Flows in YAML format and load them into `app.py` with:
 
@@ -18,7 +18,7 @@ It really is that simple! Alternatively you can build Flows in `app.py` itself [
 
 ### Indexing
 
-Every Flow has well, a flow to it. Different Pods pass data along the Flow, with one Pod's output becoming another Pod's input. Look at our indexing flow as an example:
+Every Flow has well, a flow to it. Different Pods pass data along the Flow, with one Pod's output becoming another Pod's input. Look at our indexing Flow as an example:
 
 ![](images/index-flow.png)
 
@@ -43,13 +43,31 @@ Our Pods perform all the tasks needed to make this happen:
 
 For indexing, we define which Pods to use in `flows/index.yml`. As you may have seen, cookiecutter already created some YAML files in `flows/` for us to start with. Let's break them down, starting with indexing:
 
+<table>
+  <tr>
+    <td>
+      Code
+    </td>
+    <td>
+      What it does
+    </td>
+  </tr>
+  <tr>
+    <td>
+  
 ```yaml
 !Flow
 with:
   logserver: true
 ```
 
-Starts the flow and enables the logserver, so we can monitor our Flows with [Jina Dashboard](https://github.com/jina-ai/dashboard) later.
+    </td>
+    <td>
+      Starts the flow and enables the logserver, so we can monitor our Flows with [Jina Dashboard](https://github.com/jina-ai/dashboard) later.
+    </td>
+  </tr>
+</table>
+  
 
 ```yaml
 pods:
