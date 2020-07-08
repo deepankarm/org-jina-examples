@@ -283,7 +283,7 @@ with:
 
 We first use the built-in `TransformerTorchEncoder` as the **[Executor](https://github.com/jina-ai/jina/tree/master/docs/chapters/101#executors)** in the Pod. The `with` field is used to specify the arguments passing to the `__init__()` function (XXX does this refer to the __init__ function of the `TransformerTorchEncoder` executor?):
 
-| Argument           | Effect                                                 |
+| Parameter          | Effect                                                 |
 | ---                | ---                                                    |
 | `pooling_strategy` | Strategy to merge word embeddings into chunk embedding |
 | `model_name`       | Name of the model we're using                          |
