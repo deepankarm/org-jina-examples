@@ -34,6 +34,7 @@ bash ./get_data.sh
 
 <details>
   <summary>See console output</summary>
+
 ```shell
 Cloning into './south_park/data'...
 remote: Enumerating objects: 3852, done.
@@ -41,6 +42,7 @@ remote: Total 3852 (delta 0), reused 0 (delta 0), pack-reused 3852
 Receiving objects: 100% (3852/3852), 5.11 MiB | 2.37 MiB/s, done.
 Resolving deltas: 100% (40/40), done.
 ```
+
 </details>
 
 ## Load the Data
