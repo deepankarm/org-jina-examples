@@ -54,7 +54,7 @@ On line 25, we've got:
         f.index_lines(['abc', 'cde', 'efg'], batch_size=64, read_mode='rb', size=num_docs)
 ```
 
-As you can see, this just indexes 3 strings. Let's load up our South Park file instead:
+As you can see, this indexes just 3 strings. Let's load up our South Park file instead with the `filepath` parameter:
 
 ```python
     with f:
