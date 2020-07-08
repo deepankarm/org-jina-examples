@@ -49,7 +49,9 @@ Resolving deltas: 100% (40/40), done.
 
 Now that we've got the data, we need to pass it into `app.py`. `app.py` is pretty simple out of the box, so we'll have to make some changes:
 
-On line 25, we've got:
+### Add `filepath`
+
+On **line 25**, we've got:
 
 ```python
     with f:
@@ -63,9 +65,11 @@ As you can see, this indexes just 3 strings. Let's load up our South Park file i
         f.index_lines(filepath='data/character-lines.csv', batch_size=8, read_mode='r', size=num_docs)
 ```
 
+### Index Fewer Documents
+
 While we're here, let's reduce the number of documents we're indexing, just to speed things up while we're testing. We don't want to spend hours indexing only to have bugs later on!
 
-On line 17, let's change:
+On **line 17**, let's change:
 
 ```python
 num_docs = os.environ.get('MAX_DOCS', 50000)
