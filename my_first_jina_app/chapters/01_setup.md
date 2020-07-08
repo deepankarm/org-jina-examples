@@ -173,5 +173,5 @@ pip install -r requirements.txt
 
 All done? Now we can start editing these files to index and query our South Park data!
 
-| --:                    |
-| Next: Running your app |
+| --:                                       |
+| [**Next: Running your app** ➡️](02_run.md) |
