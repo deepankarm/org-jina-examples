@@ -40,6 +40,7 @@ curl --request POST -d '{"top_k": 10, "mode": "search",  "data": ["text:hey, dud
 
 <details>
   <summary>See console output</summary>
+
 ```json  
 {
   "search": {
@@ -103,6 +104,7 @@ curl --request POST -d '{"top_k": 10, "mode": "search",  "data": ["text:hey, dud
   "status": {}
 }
 ```
+
 </details>
 
 ## Install
