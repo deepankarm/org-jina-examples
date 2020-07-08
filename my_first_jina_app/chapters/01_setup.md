@@ -38,6 +38,73 @@ Alternatively, you can open your shell and check the results via the RESTful API
 curl --request POST -d '{"top_k": 10, "mode": "search",  "data": ["text:hey, dude"]}' -H 'Content-Type: application/json' 'http://0.0.0.0:45678/api/search'
 ```
 
+<details>
+  <summary>See terminal output</summary>
+```json  
+{
+  "search": {
+    "docs": [
+      {
+        "chunks": [
+          {
+            "chunkId": 225641550,
+            "embedding": {},
+            "weight": 1.0,
+            "length": 1,
+            "topkResults": [
+              {
+                "matchChunk": {
+                  "docId": 7,
+                  "chunkId": 401451721,
+                  "offset": 1,
+                  "weight": 1.0,
+                  "length": 2,
+                  "mimeType": "text/plain",
+                  "location": [
+                    6,
+                    17
+                  ]
+                },
+                "score": {
+                  "value": 3.5258932,
+                  "opName": "NumpyIndexer"
+                }
+              }
+            ],
+            "mimeType": "text/plain",
+            "location": [
+              0,
+              10
+            ]
+          }
+        ],
+        "weight": 1.0,
+        "length": 1,
+        "topkResults": [
+          {
+            "matchDoc": {
+              "docId": 7,
+              "weight": 1.0,
+              "mimeType": "text/plain",
+              "text": "Satan! Good-bye.\n"
+            },
+            "score": {
+              "value": 0.7486778,
+              "opName": "BiMatchRanker"
+            }
+          }
+        ],
+        "mimeType": "text/plain",
+        "text": "text:Hello"
+      }
+    ],
+    "topK": 1
+  },
+  "status": {}
+}
+```
+</details>
+
 ## Install
 
 ### Prerequisites
