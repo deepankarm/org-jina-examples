@@ -45,10 +45,10 @@ For indexing, we define which Pods to use in `flows/index.yml`. As you may have 
 
 <table>
 <tr>
-<td>
+<th scope="col">
 Code
 </td>
-<td>
+<th scope="col">
 What it does
 </td>
 </tr>
