@@ -33,7 +33,7 @@ bash ./get_data.sh
 ```
 
 <details>
-  <summary>See terminal output</summary>
+  <summary>See console output</summary>
 ```shell
 Cloning into './south_park/data'...
 remote: Enumerating objects: 3852, done.
@@ -61,7 +61,7 @@ As you can see, this indexes just 3 strings. Let's load up our South Park file i
         f.index_lines(filepath='data/character-lines.csv', batch_size=8, read_mode='r', size=num_docs)
 ```
 
-While we're here, let's also reduce the number of documents we're indexing, just to speed things up while we're testing. We don't want to spend hours indexing only to have bugs later on!
+While we're here, let's reduce the number of documents we're indexing, just to speed things up while we're testing. We don't want to spend hours indexing only to have bugs later on!
 
 On line 17, let's change:
 
@@ -100,11 +100,13 @@ python app.py index
 
 ### Search Mode
 
-Just run:
+Run:
 
 ```bash
 python app.py search
 ```
+
+Note: This doesn't pop up a search interface - for that you'll need to connect via `curl`, Jinabox, or another client.
 
 ### Actually Searching
 
