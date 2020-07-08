@@ -62,8 +62,10 @@ As you can see, this indexes just 3 strings. Let's load up our South Park file i
 
 ```python
     with f:
-        f.index_lines(filepath='data/character-lines.csv', batch_size=8, read_mode='r', size=num_docs)
+        f.index_lines(filepath='data/character-lines.csv', batch_size=64, read_mode='r', size=num_docs)
 ```
+
+Note we've also changed `read_mode` to `r`, since we're reading strings, not bytes.
 
 ### Index Fewer Documents
 
