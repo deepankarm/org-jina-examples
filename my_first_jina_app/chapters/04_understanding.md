@@ -4,7 +4,7 @@ This is where we dive deeper to learn what happens inside each Flow and how they
 
 ## Flows
 
-![](https://raw.githubusercontent.com/jina-ai/jina/master/docs/chapters/101/img/ILLUS10.png)
+<img src="https://raw.githubusercontent.com/jina-ai/jina/master/docs/chapters/101/img/ILLUS10.png" width="30%">
 
 Everything in Jina is controlled by high-level [Flows](https://github.com/jina-ai/jina/tree/master/docs/chapters/101#flow) that coordinate tasks and components. We define Flows in `app.py` to index and query the content in our South Park dataset.
 
@@ -257,7 +257,7 @@ This is how Pods in both Flows can play different roles while sharing the same Y
 
 ## Pods
 
-![](https://raw.githubusercontent.com/jina-ai/jina/master/docs/chapters/101/img/ILLUS8.png)
+<img src="https://raw.githubusercontent.com/jina-ai/jina/master/docs/chapters/101/img/ILLUS8.png" width="30%">
 
 As a convention in Jina, A YAML config is used to describe the properties of an object. In this way we can easily configure the behavior of the Pods without touching their application code.
 
@@ -285,7 +285,8 @@ with:
   max_length: 96
 ```
 
-We first use the built-in `TransformerTorchEncoder` as the **[Executor](https://github.com/jina-ai/jina/tree/master/docs/chapters/101#executors)** in the Pod. The `with` field is used to specify the arguments passing to the `__init__()` function (XXX does this refer to the __init__ function of the `TransformerTorchEncoder` executor?):
+We first use the built-in `TransformerTorchEncoder` as the **[Executor](https://github.com/jina-ai/jina/tree/master/docs/chapters/101#executors)** in the Pod. The `with` field is used to specify the parameters that we pass to the `__init__()` function 
+(XXX does this refer to the __init__ function of the `TransformerTorchEncoder` executor?):
 
 | Parameter          | Effect                                                 |
 | ---                | ---                                                    |
