@@ -26,7 +26,7 @@ Every Flow has well, a flow to it. Different Pods pass data along the Flow, with
 
 <center>
 
-![](images/flow-index.png)
+<img src="images/flow-index.png">
 
 </center>
 
