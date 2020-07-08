@@ -20,7 +20,7 @@ Machine learning requires a lot of resources, and if your machine just hangs thi
 
 This can happen for many reasons. Let's look at the error message to debug:
 
-`blah blah`: This means you need to [increase the size of your `/tmp` partition on Linux](https://askubuntu.com/questions/199565/not-enough-space-on-tmp)
+`XXX`: This means you need to [increase the size of your `/tmp` partition on Linux](https://askubuntu.com/questions/199565/not-enough-space-on-tmp)
 
 ### `ERROR: Could not install packages due to an EnvironmentError: [Errno 28] No space left on device`
 
