@@ -39,7 +39,7 @@ curl --request POST -d '{"top_k": 10, "mode": "search",  "data": ["text:hey, dud
 ```
 
 <details>
-  <summary>See terminal output</summary>
+  <summary>See console output</summary>
 ```json  
 {
   "search": {
