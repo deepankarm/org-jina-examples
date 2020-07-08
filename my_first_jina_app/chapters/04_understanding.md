@@ -2,7 +2,7 @@
 
 This is where we dive deeper to learn what happens inside each Flow and how they're built up from Pods.
 
-## Flows
+## 🌱 Flows
 
 <img src="https://raw.githubusercontent.com/jina-ai/jina/master/docs/chapters/101/img/ILLUS10.png" width="30%" align="left">
 
