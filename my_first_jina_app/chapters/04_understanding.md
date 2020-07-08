@@ -297,3 +297,14 @@ We first use the built-in `TransformerTorchEncoder` as the **[Executor](https://
 | `pooling_strategy` | Strategy to merge word embeddings into chunk embedding |
 | `model_name`       | Name of the model we're using                          |
 | `max_length`       | Maximum length to truncate tokenized sequences to      |
+
+<table width="100%">
+  <tr>
+    <td align="left" style="text-align:right">
+      <strong><a href="./03_troubleshooting.md">⬅️ Previous: Troubleshooting</a></strong>
+    </td>
+    <td align="right" style="text-align:right">
+      <strong><a href="./05_wrap_up.md">Next: Wrap up ➡️</a></strong>
+    </td>
+  </tr>
+</table>
