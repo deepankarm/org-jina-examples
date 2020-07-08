@@ -123,13 +123,13 @@ Now that the app is running in search mode, we can search from the web browser w
 ![](https://raw.githubusercontent.com/jina-ai/jinabox.js/master/.github/jinabox.gif)
  
 1. Go to [jinabox](https://jina.ai/jinabox.js) in your browser
-2. Ensure you have the server endpoint set to `http://localhost:45678/api/search`
+2. Ensure you have the server endpoint set to `http://localhost:65481/api/search`
 3. Type a phrase into the search bar and see which South Park lines come up
 
 #### Curl
 
 ```bash
-curl --request POST -d '{"top_k": 10, "mode": "search",  "data": ["text:hey, dude"]}' -H 'Content-Type: application/json' 'http://0.0.0.0:45678/api/search'
+curl --request POST -d '{"top_k": 10, "mode": "search",  "data": ["text:hey, dude"]}' -H 'Content-Type: application/json' 'http://0.0.0.0:65481/api/search'
 ```
 
 <details>
