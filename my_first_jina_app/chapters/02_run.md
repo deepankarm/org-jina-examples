@@ -21,10 +21,10 @@ If you're a human and want to read that more easily:
 
 | Season | Episode | Character | Line                                    | 
 | ---    | ---     | ---       | ---                                     | 
-| 10     | 1       | Stan      | "You guys you guys! Chef is going away. | 
-| 10     | 1       | Kyle      | "Going away? For how long?              | 
-| 10     | 1       | Stan      | "Forever.                               | 
-| 10     | 1       | Chef      | "I'm sorry boys.                        | 
+| 10     | 1       | Stan      | "You guys you guys! Chef is going away." | 
+| 10     | 1       | Kyle      | "Going away? For how long?"              |
+| 10     | 1       | Stan      | "Forever."                               |
+| 10     | 1       | Chef      | "I'm sorry boys."                        |
 
 Now let's ensure we're back in our base folder (from the repo you cloned earlier, *not* the `south_park` folder) and download this dataset by running:
 
