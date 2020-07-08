@@ -177,6 +177,9 @@ All done? Now we can start editing these files to index and query our South Park
 
 <table width="100%">
   <tr>
+    <td>
+      <strong><a href="./02_run.md">⬅️ Previous: README</a></strong>
+    </td>
     <td align="right" style="text-align:right">
       <strong><a href="./02_run.md">Next: Running your app ➡️</a></strong>
     </td>

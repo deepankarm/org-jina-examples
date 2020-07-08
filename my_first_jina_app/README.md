@@ -27,9 +27,19 @@ If you've gone through the above steps you've already got one project under your
 * Scale up
 * Search different things (images, videos, you name it)
 
+<table width="100%">
+  <tr>
+    <td align="right" style="text-align:right">
+      <strong><a href="./01_setup.md">Next: Setup ➡️</a></strong>
+    </td>
+  </tr>
+</table>
+
 ---
 
 # Notes
+
+**This section will be deleted when draft is finalized**
 
 This is a different approach to our existing tutorials. Instead of many tutorials to do and explain different things, I want:
 
