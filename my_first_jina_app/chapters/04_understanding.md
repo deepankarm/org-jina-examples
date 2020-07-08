@@ -4,9 +4,11 @@ This is where we dive deeper to learn what happens inside each Flow and how they
 
 ## Flows
 
-<img src="https://raw.githubusercontent.com/jina-ai/jina/master/docs/chapters/101/img/ILLUS10.png" width="30%">
+<img src="https://raw.githubusercontent.com/jina-ai/jina/master/docs/chapters/101/img/ILLUS10.png" width="30%" align="left">
 
-Everything in Jina is controlled by high-level [Flows](https://github.com/jina-ai/jina/tree/master/docs/chapters/101#flow) that coordinate tasks and components. We define Flows in `app.py` to index and query the content in our South Park dataset.
+Just as a plant manages nutrient flow and growth rate for its branches, Flow manages the states and context of a group of Pods, orchestrating them to accomplish one task. Whether a Pod is remote or running in Docker, one Flow rules them all!
+
+We define Flows in `app.py` to index and query the content in our South Park dataset.
 
 In this case we'll write our Flows in YAML format and load them into `app.py` with:
 
@@ -257,7 +259,9 @@ This is how Pods in both Flows can play different roles while sharing the same Y
 
 ## Pods
 
-<img src="https://raw.githubusercontent.com/jina-ai/jina/master/docs/chapters/101/img/ILLUS8.png" width="30%">
+<img src="https://raw.githubusercontent.com/jina-ai/jina/master/docs/chapters/101/img/ILLUS8.png" width="30%" align="left">
+
+As you may recall from [Jina 101](https://github.com/jina-ai/jina/tree/master/docs/chapters/101), A Pod is a group of Peas with the same property, running in parallel on a local host or over the network. A Pod provides a single network interface for its Peas, making them look like one single Pea from the outside. Beyond that, a Pod adds further control, scheduling, and context management to the Peas.
 
 As a convention in Jina, A YAML config is used to describe the properties of an object. In this way we can easily configure the behavior of the Pods without touching their application code.
 
