@@ -124,17 +124,17 @@ You should have also read [key concepts](01_concepts.md) to get a good overview 
 Let's get the basic files we need to get moving:
 
 ```
-git clone blah/tutorial
+git clone XXX/tutorial
 cd tutorial
 ```
 
 ### Cookiecutter
 
-We use [cookiecutter](https://github.com/cookiecutter/cookiecutter) to spin up a basic Jina app to save you having to do a lot of typing and setup. Install cookiecutter and create a new Jina project with:
-
 ```
 pip install -U cookiecutter && cookiecutter gh:jina-ai/cookiecutter-jina
 ```
+
+We use [cookiecutter](https://github.com/cookiecutter/cookiecutter) to spin up a basic Jina app and save you having to do a lot of typing and setup. 
 
 For our South Park example, we recommend the following settings:
 
@@ -172,3 +172,6 @@ pip install -r requirements.txt
 ```
 
 All done? Now we can start editing these files to index and query our South Park data!
+
+| --:                    |
+| Next: Running your app |
