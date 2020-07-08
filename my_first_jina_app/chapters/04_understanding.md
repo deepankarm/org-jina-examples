@@ -24,7 +24,11 @@ It really is that simple! Alternatively you can build Flows in `app.py` itself [
 
 Every Flow has well, a flow to it. Different Pods pass data along the Flow, with one Pod's output becoming another Pod's input. Look at our indexing Flow as an example:
 
+<center>
+
 ![](images/flow-index.png)
+
+</center>
 
 Right now our data is just one big text file. Our Flow needs to process it into a useful state, which we do with Pods. Each Pod in the Flow performs a different task.
 
