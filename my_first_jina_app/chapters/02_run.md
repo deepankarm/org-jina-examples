@@ -6,7 +6,7 @@ Our goal is to find out who said what in South Park episodes when a user queries
 
 The raw data contains season, episode, character, and line information in the `.csv` format as follows:
 
-```
+```csv
 Season,Episode,Character,Line
 10,1,Stan,"You guys, you guys! Chef is going away.
 "
