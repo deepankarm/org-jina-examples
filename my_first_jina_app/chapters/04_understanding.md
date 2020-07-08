@@ -109,7 +109,7 @@ Starts our Pods section, and specifies our first Pod, named `crafter` which is d
 This code specifies:
 
 * The encoder Pod and its path
-* Replicas for XXX
+* Replicas for parallel processing
 * Timeout limits
 * Read only attribute, so the Pod can't adjust the input data
 
@@ -128,7 +128,7 @@ This code specifies:
 </td>
 <td>
 
-Similar to the above, but includes the `separated_workspaces` attribute to XXX
+Similar to the above, but includes the `separated_workspaces` attribute in order to XXX
 
 </td>
 </tr>
@@ -259,7 +259,7 @@ This is how Pods in both Flows can play different roles while sharing the same Y
 
 ## Pods
 
-<img src="https://raw.githubusercontent.com/jina-ai/jina/master/docs/chapters/101/img/ILLUS8.png" width="30%" align="left">
+<img src="https://raw.githubusercontent.com/jina-ai/jina/master/docs/chapters/101/img/ILLUS8.png" width="20%" align="left">
 
 As you may recall from [Jina 101](https://github.com/jina-ai/jina/tree/master/docs/chapters/101), A Pod is a group of Peas with the same property, running in parallel on a local host or over the network. A Pod provides a single network interface for its Peas, making them look like one single Pea from the outside. Beyond that, a Pod adds further control, scheduling, and context management to the Peas.
 
@@ -290,7 +290,7 @@ with:
 ```
 
 We first use the built-in `TransformerTorchEncoder` as the **[Executor](https://github.com/jina-ai/jina/tree/master/docs/chapters/101#executors)** in the Pod. The `with` field is used to specify the parameters that we pass to the `__init__()` function 
-(XXX does this refer to the __init__ function of the `TransformerTorchEncoder` executor?):
+(XXX does this refer to the `__init__` function of the `TransformerTorchEncoder` executor?):
 
 | Parameter          | Effect                                                 |
 | ---                | ---                                                    |
