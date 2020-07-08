@@ -8,11 +8,11 @@ Our example program will be a simple neural search engine for text. It will take
 
 ## Contents
 
-1. [Set up](chapters/01_setup.md)
-2. [Run Jina](chapters/02_run.md)
-3. [Troubleshooting](chapters/03_troubleshooting.md)
-4. [Understanding](chapters/04_understanding.md)
-5. [Wrap up](05_wrap_up.md) - not done yet
+1. [🥚 Set up](chapters/01_setup.md)
+2. [🚀 Run Jina](chapters/02_run.md)
+3. [⁉️  Troubleshooting](chapters/03_troubleshooting.md)
+4. [🧠 Understanding](chapters/04_understanding.md)
+5. [🎁 Wrap up](05_wrap_up.md) - not done yet
 
 Need support? First check out our [troubleshooting section](chapters/03_troubleshooting.md). If that doesn't work, hit up our #support channel on our [Slack](https://jina-ai.slack.com/messages/support/)!
 
