@@ -118,10 +118,6 @@ Now that the app is running in search mode, we can search from the command line 
 curl --request POST -d '{"top_k": 10, "mode": "search",  "data": ["text:hey, dude"]}' -H 'Content-Type: application/json' 'http://0.0.0.0:45678/api/search'
 ```
 
-Or from `jinabox.js`. You can refer back to that [section of our docs](./section_1.md) to get jinabox running your browser.
-
-![](https://raw.githubusercontent.com/jina-ai/jinabox.js/master/.github/jinabox.gif)
-
 <details>
 <summary>Click here to see the console output</summary>
 
@@ -131,10 +127,15 @@ Or from `jinabox.js`. You can refer back to that [section of our docs](./section
 
 </details>
 
+Or from `jinabox.js`. You can refer back to that [section of our docs](./section_1.md) to get jinabox running your browser.
+
+![](https://raw.githubusercontent.com/jina-ai/jinabox.js/master/.github/jinabox.gif)
+
+
 <table width="100%">
   <tr>
     <td align="left" style="text-align:right">
-      <strong><a href="./01.md">⬅️ Previous: Installing ➡️</a></strong>
+      <strong><a href="./01.md">⬅️ Previous: Installing</a></strong>
     </td>
     <td align="right" style="text-align:right">
       <strong><a href="./03_troubleshooting.md">Next: Troubleshooting ➡️</a></strong>
