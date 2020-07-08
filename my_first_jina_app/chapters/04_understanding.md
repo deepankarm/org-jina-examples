@@ -139,6 +139,9 @@ Similar to the above, but includes the `separated_workspaces` attribute to XXX
 This Pod specifies prerequisites, namely the `gateway` Pod. We can see this in the Flow diagram above.
 
 </td>
+</tr>
+<tr>
+<td>
 
 ```yaml
   join_all:
