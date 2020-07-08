@@ -32,11 +32,22 @@ Now let's ensure we're back in our base folder (from the repo you cloned earlier
 bash ./get_data.sh
 ```
 
+<details>
+  <summary>See terminal output</summary>
+```shell
+Cloning into './south_park/data'...
+remote: Enumerating objects: 3852, done.
+remote: Total 3852 (delta 0), reused 0 (delta 0), pack-reused 3852
+Receiving objects: 100% (3852/3852), 5.11 MiB | 2.37 MiB/s, done.
+Resolving deltas: 100% (40/40), done.
+```
+</details>
+
 ## Load the Data
 
 Now that we've got the data, we need to pass it into `app.py`. `app.py` is pretty simple out of the box, so we'll have to make some changes:
 
-On line 25, we've got the line:
+On line 25, we've got:
 
 ```python
     with f:
