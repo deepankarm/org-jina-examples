@@ -33,7 +33,9 @@ If you've gone through the above steps you've already got one project under your
 
 This is a different approach to our existing tutorials. Instead of many tutorials to do and explain different things, I want:
 
-## One simple tutorial to rule them all
+## 💍 One simple tutorial to rule them all
+
+Think of it like the One Ring for Tolkien. This is the tutorial that all the others build from
 
 I want a logical flow for new users. Right now it goes:
 1. Jina 101: Cute pics, very layman explanations
