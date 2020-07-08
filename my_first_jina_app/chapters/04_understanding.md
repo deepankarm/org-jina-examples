@@ -41,6 +41,9 @@ Our Pods perform all the tasks needed to make this happen:
 | `doc_indexer`   | Store the document content                           |
 | `join_all`      | Join the `chunk_indexer` and `doc_indexer` pathways |
 
+
+#### Diving into `index.yml`
+
 For indexing, we define which Pods to use in `flows/index.yml`. As you may have seen, cookiecutter already created some YAML files in `flows/` for us to start with. Let's break them down, starting with indexing:
 
 <table>
