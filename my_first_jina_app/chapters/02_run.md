@@ -129,7 +129,9 @@ Now that the app is running in search mode, we can search from the web browser w
 #### Curl
 
 ```bash
-curl --request POST -d '{"top_k": 10, "mode": "search",  "data": ["text:hey, dude"]}' -H 'Content-Type: application/json' 'http://0.0.0.0:65481/api/search'
+curl --request POST -d '{"top_k": 10, "mode": "search", \
+"data": ["text:hey, dude"]}' -H 'Content-Type: application/json' \
+'http://0.0.0.0:65481/api/search'
 ```
 
 <details>
