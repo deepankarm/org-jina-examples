@@ -26,7 +26,7 @@ If you're a human and want to read that more easily:
 | 10     | 1       | Stan      | "Forever.                               | 
 | 10     | 1       | Chef      | "I'm sorry boys.                        | 
 
-Now let's ensure we're back in our base folder (from the repo you cloned, *not* the `south_park` folder) and download this dataset by running:
+Now let's ensure we're back in our base folder (from the repo you cloned earlier, *not* the `south_park` folder) and download this dataset by running:
 
 ```bash
 bash ./get_data.sh
