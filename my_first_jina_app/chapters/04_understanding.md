@@ -57,17 +57,19 @@ What it does
 
 ```yaml
 !Flow
-with:
-logserver: true
+  with:
+  logserver: true
 ```
 
 </td>
 <td>
+
 Starts the flow and enables the logserver, so we can monitor our Flows with [Jina Dashboard](https://github.com/jina-ai/dashboard) later.
+
 </td>
 </tr>
-</table>
-  
+<tr>
+<td>
 
 ```yaml
 pods:
@@ -75,7 +77,16 @@ pods:
     yaml_path: pods/craft.yml
     read_only: true
 ```
+
+</td>
+<td>
+
 Starts our Pods section, and specifies our first Pod, named `crafter` which is defined in `pod/craft.yml`. `pods/craft.yml` is in turn is a YAML file which specifies the Pod's [Executor](https://github.com/jina-ai/jina/tree/master/docs/chapters/101#executors) and other attributes.
+
+</td>
+</tr>
+<tr>
+<td>
 
 ```yaml
   encoder:
@@ -84,12 +95,21 @@ Starts our Pods section, and specifies our first Pod, named `crafter` which is d
     timeout_ready: 600000
     read_only: true
 ```
+
+</td>
+<td>
+
 This code specifies:
 
 * The encoder Pod and its path
 * Replicas for XXX
 * Timeout limits
 * Read only attribute, so the Pod can't adjust the input data
+
+</td>
+</tr>
+<tr>
+<td>
 
 ```yaml
   chunk_idx:
@@ -98,7 +118,14 @@ This code specifies:
     separated_workspace: true
 ```
 
+</td>
+<td>
+
 Similar to the above, but includes the `separated_workspaces` attribute to XXX
+
+</td>
+</tr>
+<td>
 
 ```yaml
   doc_idx:
@@ -106,7 +133,12 @@ Similar to the above, but includes the `separated_workspaces` attribute to XXX
     needs: gateway
 ```
 
+</td>
+<td>
+
 This Pod specifies prerequisites, namely the `gateway` Pod. We can see this in the Flow diagram above.
+
+</td>
 
 ```yaml
   join_all:
@@ -114,7 +146,14 @@ This Pod specifies prerequisites, namely the `gateway` Pod. We can see this in t
     needs: [doc_idx, chunk_idx]
 ```
 
+</td>
+<td>
+
 `join_all` looks like just another Pod - but what's with the `_merge` path? This is a built-in YAML that merges all the messages that come in from the Pods `needs`.
+
+</td>
+</tr>
+</table>
 
 So, is that all of the Pods? Not quite! We always have another Pod working in silence - the `gateway` pod. Most of the time we can safely ignore it because it basically does all the dirty orchestration work for the Flow.
 
