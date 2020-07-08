@@ -33,3 +33,14 @@ For any of these errors you'll need to install the package onto your system. In 
 ```sh
 sudo apt-get install <package_name>
 ```
+
+<table width="100%">
+  <tr>
+    <td align="left" style="text-align:right">
+      <strong><a href="./02_run.md">⬅️ Previous: Running the App</a></strong>
+    </td>
+    <td align="right" style="text-align:right">
+      <strong><a href="./04_understanding.md">Next: Understanding ➡️</a></strong>
+    </td>
+  </tr>
+</table>

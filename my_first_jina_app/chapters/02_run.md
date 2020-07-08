@@ -83,7 +83,7 @@ to:
 num_docs = os.environ.get('MAX_DOCS', 500)
 ```
 
-That should speed up our testing by a factor of 100! Once we've verified everything works we can set it back to `50000` to index more of our dataset.
+That should speed up our testing by a factor of 100! Once we've verified everything works we can set it back to `50000` to index more of our dataset. If it still seems to slow, just reduce that number down to 
 
 ## Run the Flows
 
@@ -150,7 +150,7 @@ curl --request POST -d '{"top_k": 10, "mode": "search", \
 <table width="100%">
   <tr>
     <td align="left" style="text-align:right">
-      <strong><a href="./01.md">⬅️ Previous: Installing</a></strong>
+      <strong><a href="./01_setup.md">⬅️ Previous: Set up</a></strong>
     </td>
     <td align="right" style="text-align:right">
       <strong><a href="./03_troubleshooting.md">Next: Troubleshooting ➡️</a></strong>
