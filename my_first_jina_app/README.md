@@ -1,22 +1,22 @@
 # Building Your First Jina App
 
-## Introduction
+## 👋 Introduction
 
 In this series of tutorials we'll guide you on the process of building your own Jina search app. Don't worry if you're new to machine learning or search. We'll spell it all out right here.
 
 Our example program will be a simple neural search engine for text. It will take a user's typed input, and return a list of lines from South Park that match most closely.
 
-## Contents
+## 📖 Contents
 
-1. [🥚 Set up](chapters/01_setup.md)
-2. [🚀 Run Jina](chapters/02_run.md)
-3. [⁉️  Troubleshooting](chapters/03_troubleshooting.md)
-4. [🧠 Understanding](chapters/04_understanding.md)
-5. [🎁 Wrap up](05_wrap_up.md) - not done yet
+[🥚 Set up](chapters/01_setup.md)
+[🚀 Run Jina](chapters/02_run.md)
+[⁉️  Troubleshooting](chapters/03_troubleshooting.md)
+[🧠 Understanding Jina](chapters/04_understanding.md)
+[🎁 Wrap up](05_wrap_up.md) - not done yet
 
 Need support? First check out our [troubleshooting section](chapters/03_troubleshooting.md). If that doesn't work, hit up our #support channel on our [Slack](https://jina-ai.slack.com/messages/support/)!
 
-## Next Up: Dig Deeper
+## ⛏️ Next Up: Dig Deeper
 
 **Note: Not done yet, but including here as a TODO for now**
 
