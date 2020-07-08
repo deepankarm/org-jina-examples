@@ -173,5 +173,10 @@ pip install -r requirements.txt
 
 All done? Now we can start editing these files to index and query our South Park data!
 
-| --:                                       |
-| [**Next: Running your app** ➡️](02_run.md) |
+<table width=100%>
+  <tr>
+    <td align="right" style="text-align:right">
+      [**Next: Running your app** ➡️](02_run.md)
+    </td>
+  </tr>
+</table>
