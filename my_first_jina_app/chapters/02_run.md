@@ -128,3 +128,14 @@ Or from `jinabox.js`. You can refer back to that [section of our docs](./section
 </p>
 
 </details>
+
+<table width="100%">
+  <tr>
+    <td align="left" style="text-align:right">
+      <strong><a href="./01.md">⬅️ Previous: Installing ➡️</a></strong>
+    </td>
+    <td align="right" style="text-align:right">
+      <strong><a href="./03_troubleshooting.md">Next: Troubleshooting ➡️</a></strong>
+    </td>
+  </tr>
+</table>
