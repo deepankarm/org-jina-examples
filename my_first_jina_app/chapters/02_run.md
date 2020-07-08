@@ -114,9 +114,17 @@ python app.py search
 
 Note: This doesn't pop up a search interface - for that you'll need to connect via `curl`, Jinabox, or another client.
 
-### Actually Searching
+### Searching Data
 
-Now that the app is running in search mode, we can search from the command line with `curl`:
+Now that the app is running in search mode, we can search from the web browser with Jinabox or the terminal with `curl`:
+
+#### Jinabox
+
+Or from `jinabox.js`. You can refer back to that [section of our docs](./section_1.md) to get jinabox running your browser.
+
+![](https://raw.githubusercontent.com/jina-ai/jinabox.js/master/.github/jinabox.gif)
+
+#### Curl
 
 ```bash
 curl --request POST -d '{"top_k": 10, "mode": "search",  "data": ["text:hey, dude"]}' -H 'Content-Type: application/json' 'http://0.0.0.0:45678/api/search'
@@ -131,9 +139,6 @@ curl --request POST -d '{"top_k": 10, "mode": "search",  "data": ["text:hey, dud
 
 </details>
 
-Or from `jinabox.js`. You can refer back to that [section of our docs](./section_1.md) to get jinabox running your browser.
-
-![](https://raw.githubusercontent.com/jina-ai/jinabox.js/master/.github/jinabox.gif)
 
 
 <table width="100%">
