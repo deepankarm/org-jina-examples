@@ -4,6 +4,8 @@ This is where we dive deeper to learn what happens inside each Flow and how they
 
 ## Flows
 
+![](https://raw.githubusercontent.com/jina-ai/jina/master/docs/chapters/101/img/ILLUS10.png)
+
 Everything in Jina is controlled by high-level [Flows](https://github.com/jina-ai/jina/tree/master/docs/chapters/101#flow) that coordinate tasks and components. We define Flows in `app.py` to index and query the content in our South Park dataset.
 
 In this case we'll write our Flows in YAML format and load them into `app.py` with:
@@ -254,6 +256,8 @@ While the two Flows share (most of) the same Pods, there are some differences in
 This is how Pods in both Flows can play different roles while sharing the same YAML files.
 
 ## Pods
+
+![](https://raw.githubusercontent.com/jina-ai/jina/master/docs/chapters/101/img/ILLUS8.png)
 
 As a convention in Jina, A YAML config is used to describe the properties of an object. In this way we can easily configure the behavior of the Pods without touching their application code.
 
