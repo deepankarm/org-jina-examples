@@ -16,7 +16,9 @@ Our example program will be a simple neural search engine for text. It will take
 
 Need support? First check out our [troubleshooting section](chapters/03_troubleshooting.md). If that doesn't work, hit up our #support channel on our [Slack](https://jina-ai.slack.com/messages/support/)!
 
-## Next Up Set: Dig Deeper
+## Next Up: Dig Deeper
+
+**Note: Not done yet, but including here as a TODO for now**
 
 If you've gone through the above steps you've already got one project under your belt. Nice! Stay tuned to expand South Park search even further:
 
