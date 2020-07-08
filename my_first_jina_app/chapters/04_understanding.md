@@ -169,7 +169,14 @@ With all these Pods defined in our Flow, we're all set up to index all the chara
 
 Just like indexing, the querying Flow is also defined in a YAML file. Much of it is similar to indexing:
 
+<table>
+<tr>
+<td>
+
 ![](images/flow-query.png)
+
+</td>
+<td>
 
 ```yaml
 !Flow
@@ -197,6 +204,10 @@ pods:
   doc_idx:
     yaml_path: pods/doc.yml
 ```
+
+</td>
+</tr>
+</table>
 
 In indexing we have to break down the Document into Chunks and index it. For querying we need to do the same with a user's query, and we can use many of the same Pods. There are a few differences though:
 
