@@ -5,7 +5,7 @@ import sys
 
 from jina.flow import Flow
 
-num_docs = os.environ.get('MAX_DOCS', 50)
+num_docs = os.environ.get('MAX_DOCS', 500)
 data_path = os.path.join('data','character-lines.csv')
 
 def config():
@@ -23,7 +23,7 @@ def index():
     f = Flow.load_config('flows/index.yml')
 
     with f:
-        f.index_lines(filepath=data_path, batch_size=8, read_mode='r', size=num_docs)
+        f.index_lines(filepath=data_path, batch_size=64, read_mode='r', size=num_docs)
 
     # for search
 def search():
