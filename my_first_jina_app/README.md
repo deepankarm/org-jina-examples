@@ -36,7 +36,7 @@ If you've gone through the above steps you've already got one project under your
 <table width="100%">
   <tr>
     <td align="right" style="text-align:right">
-      <strong><a href="./01_setup.md">Next: Setup ➡️</a></strong>
+      <strong><a href="./setup.md">Next: Setup ➡️</a></strong>
     </td>
   </tr>
 </table>
