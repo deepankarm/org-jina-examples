@@ -51,7 +51,7 @@ Now that we've got the data, we need to pass it into `app.py`. `app.py` is prett
 
 ### Add `filepath`
 
-On **line 25**, we've got:
+In the `index` function, we have:
 
 ```python
     with f:
@@ -71,7 +71,7 @@ Note we've also changed `read_mode` to `r`, since we're reading strings, not byt
 
 While we're here, let's reduce the number of documents we're indexing, just to speed things up while we're testing. We don't want to spend hours indexing only to have bugs later on!
 
-On **line 17**, let's change:
+In the section above the `config` function, let's change:
 
 ```python
 num_docs = os.environ.get('MAX_DOCS', 50000)
