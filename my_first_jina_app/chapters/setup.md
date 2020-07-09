@@ -22,7 +22,7 @@ Note: You'll need to run the Docker image before trying the steps below
 
 #### Query with Jinabox
 
-![](https://raw.githubusercontent.com/jina-ai/jinabox.js/master/.github/jinabox.gif)
+![](../jinabox-southpark.gif)
 
 1. Go to [jinabox](https://jina.ai/jinabox.js) in your browser
 2. Ensure you have the server endpoint set to `http://localhost:45678/api/search`
@@ -35,7 +35,9 @@ Find out more about [jinabox.js](https://github.com/jina-ai/jinabox.js/), includ
 Alternatively, you can open your shell and check the results via the RESTful API. The matched results are stored in `topkResults`.
 
 ```bash
-curl --request POST -d '{"top_k": 10, "mode": "search",  "data": ["text:hey, dude"]}' -H 'Content-Type: application/json' 'http://0.0.0.0:45678/api/search'
+curl --request POST -d '{"top_k": 10, "mode": "search", \
+"data": ["text:hey, dude"]}' -H 'Content-Type: application/json' \
+'http://0.0.0.0:45678/api/search'
 ```
 
 <details>
