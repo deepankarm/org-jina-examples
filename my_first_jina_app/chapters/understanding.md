@@ -237,13 +237,13 @@ Now that both our Flows are ready for action, let's take a quick look at the dif
 
 Compared to `index.yml`, we have some extra features in `query.yml`:
 
-| Line | Code                                     | Meaning                                                                |
-| ---  | ---                                      | ---                                                                    |
-| 4    | `rest_api:true`                          | Use Jina's REST API, allowing clients like jinabox and `curl` to connect |
-| 5    | `port_grpc: $JINA_PORT`                  | The port for connecting to Jina's API
-| 18 | `polling: all`                           | Setting `polling` to `all` ensures all workers poll the message |
-| 19 | `reducing_yaml_path: _merge_topk_chunks` | Use `_merge_topk_chunks` to reduce result from all replicas     |
-| 21 | `ranker:`                                | A Pod to rank results by relevance                              |
+| Code                                     | Meaning                                                                  |
+| ---                                      | ---                                                                      |
+| `rest_api:true`                          | Use Jina's REST API, allowing clients like jinabox and `curl` to connect |
+| `port_grpc: $JINA_PORT`                  | The port for connecting to Jina's API                                    |
+| `polling: all`                           | Setting `polling` to `all` ensures all workers poll the message          |
+| `reducing_yaml_path: _merge_topk_chunks` | Use `_merge_topk_chunks` to reduce result from all replicas              |
+| `ranker:`                                | A Pod to rank results by relevance                                       |
 
 #### Structures
 
@@ -263,9 +263,11 @@ This is how Pods in both Flows can play different roles while sharing the same Y
 
 <img src="https://raw.githubusercontent.com/jina-ai/jina/master/docs/chapters/101/img/ILLUS8.png" width="20%" align="left">
 
+You can think of the Flow as telling Jina *what* tasks to perform on the dataset. The Pods comprise the Flow and tell Jina *how* to perform each task.
+
 As you may recall from [Jina 101](https://github.com/jina-ai/jina/tree/master/docs/chapters/101), A Pod is a group of Peas with the same property, running in parallel on a local host or over the network. A Pod provides a single network interface for its Peas, making them look like one single Pea from the outside. Beyond that, a Pod adds further control, scheduling, and context management to the Peas.
 
-As a convention in Jina, A YAML config is used to describe the properties of an object. In this way we can easily configure the behavior of the Pods without touching their application code.
+As a convention in Jina, we use YAML files to describe objects. This way we can easily configure the behavior of the Pods without touching their application code.
 
 Let's start by looking at our indexing Flow, `flows/index.yml`. Instead of the first Pod `crafter`, let's look at `encoder` which is a bit simpler:
 
