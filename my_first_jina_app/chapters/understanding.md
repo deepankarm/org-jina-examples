@@ -291,8 +291,7 @@ with:
   max_length: 96
 ```
 
-We first use the built-in `TransformerTorchEncoder` as the **[Executor](https://github.com/jina-ai/jina/tree/master/docs/chapters/101#executors)** in the Pod. The `with` field is used to specify the parameters that we pass to the `__init__()` function 
-(XXX does this refer to the `__init__` function of the `TransformerTorchEncoder` executor?):
+We first use the built-in `TransformerTorchEncoder` as the **[Executor](https://github.com/jina-ai/jina/tree/master/docs/chapters/101#executors)** in the Pod. The `with` field is used to specify the parameters that we pass to `TransformerTorchEncoder`.
 
 | Parameter          | Effect                                                 |
 | ---                | ---                                                    |
