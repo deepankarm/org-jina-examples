@@ -119,7 +119,7 @@ You'll need:
 * 8 gigabytes or more of RAM
 * Plenty of time - Indexing can take a while!
 
-You should have also read [key concepts](01_concepts.md) to get a good overview of how Jina and this example work.
+You should have also read [key concepts](concepts.md) to get a good overview of how Jina and this example work.
 
 ### Clone this repo
 
@@ -178,10 +178,10 @@ All done? Now we can start editing these files to index and query our South Park
 <table width="100%">
   <tr>
     <td>
-      <strong><a href="./02_run.md">⬅️ Previous: README</a></strong>
+      <strong><a href="./run.md">⬅️ Previous: README</a></strong>
     </td>
     <td align="right" style="text-align:right">
-      <strong><a href="./02_run.md">Next: Running your app ➡️</a></strong>
+      <strong><a href="./run.md">Next: Running your app ➡️</a></strong>
     </td>
   </tr>
 </table>

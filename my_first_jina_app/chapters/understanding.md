@@ -304,10 +304,10 @@ We first use the built-in `TransformerTorchEncoder` as the **[Executor](https://
 <table width="100%">
   <tr>
     <td align="left" style="text-align:right">
-      <strong><a href="./03_troubleshooting.md">⬅️ Previous: Troubleshooting</a></strong>
+      <strong><a href="./troubleshooting.md">⬅️ Previous: Troubleshooting</a></strong>
     </td>
     <td align="right" style="text-align:right">
-      <strong><a href="./05_wrap_up.md">Next: Wrap up ➡️</a></strong>
+      <strong><a href="./wrap_up.md">Next: Wrap up ➡️</a></strong>
     </td>
   </tr>
 </table>

@@ -150,10 +150,10 @@ curl --request POST -d '{"top_k": 10, "mode": "search", \
 <table width="100%">
   <tr>
     <td align="left" style="text-align:right">
-      <strong><a href="./01_setup.md">⬅️ Previous: Set up</a></strong>
+      <strong><a href="./setup.md">⬅️ Previous: Set up</a></strong>
     </td>
     <td align="right" style="text-align:right">
-      <strong><a href="./03_troubleshooting.md">Next: Troubleshooting ➡️</a></strong>
+      <strong><a href="./troubleshooting.md">Next: Troubleshooting ➡️</a></strong>
     </td>
   </tr>
 </table>
