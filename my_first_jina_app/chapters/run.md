@@ -1,5 +1,7 @@
 # My First Jina App: Running
 
+⚠️ Now we're going to get our hands dirty, and if we're going to run into trouble, this is where we'll find it. If you hit any snags, check our **[troubleshooting](./troubleshooting.md)** section!
+
 ## Prepare the Data
 
 Our goal is to find out who said what in South Park episodes when a user queries a phrase. The [SouthPark dataset](https://github.com/BobAdamsEE/SouthParkData/) contains the characters and lines from seasons 1 to 19. Many thanks to [BobAdamsEE](https://github.com/BobAdamsEE) for sharing this awesome resource!👏
@@ -47,11 +49,38 @@ Resolving deltas: 100% (40/40), done.
 
 ## Load the Data
 
-Now that we've got the data, we need to pass it into `app.py`. `app.py` is pretty simple out of the box, so we'll have to make some changes:
+Now that we've got the data, we need to pass it into `app.py`. `app.py` is pretty simple out of the box, so we'll have to make some changes. First of all:
+
+```shell
+cd south_park
+```
+
+### Check the Data
+
+Let's just ensure the file has everything we want:
+
+```shell
+head data/character-lines.csv
+```
+
+You should see output like:
+
+```csv
+Stan! I don't wanna talk about it, I jus' wanna leave.
+Mysterion! Mrs.
+Sally! Pa-pa.
+Canadians! We want respect!
+Phillip! That smelly Saddam Hussein.
+Cartman! Strike me down while you can!
+Morpheus! What if I were to tell you.
+Kanye! Yep, got it.
+Jimbo! Here we are at Shafer's Crossing, lookin' for some animals.
+Kyle! it's okay.
+```
 
 ### Add `filepath`
 
-In the `index` function, we have:
+In the `index` function, we currently have:
 
 ```python
     with f:
@@ -83,7 +112,7 @@ to:
 num_docs = os.environ.get('MAX_DOCS', 500)
 ```
 
-That should speed up our testing by a factor of 100! Once we've verified everything works we can set it back to `50000` to index more of our dataset. If it still seems to slow, just reduce that number down to 
+That should speed up our testing by a factor of 100! Once we've verified everything works we can set it back to `50000` to index more of our dataset. If it still seems to slow, just reduce that number down to 50 or so.
 
 ## Run the Flows
 
@@ -114,6 +143,14 @@ Run:
 python app.py search
 ```
 
+After a while you should see the console stop scrolling and display output like:
+
+```console
+Flow@85144[S]:flow is started at 0.0.0.0:65481, you can now use client to send request!
+```
+
+Be sure to note down the port number. We'll need it for `curl` and jinabox! In our case we'll assume it's `65481`, and we use that in the below examples. If your port number is different, be sure to use that instead.
+
 Note: This doesn't pop up a search interface - for that you'll need to connect via `curl`, Jinabox, or another client.
 
 ### Searching Data
@@ -131,9 +168,7 @@ Now that the app is running in search mode, we can search from the web browser w
 #### Curl
 
 ```bash
-curl --request POST -d '{"top_k": 10, "mode": "search", \
-"data": ["text:hey, dude"]}' -H 'Content-Type: application/json' \
-'http://0.0.0.0:65481/api/search'
+curl --request POST -d '{"top_k": 10, "mode": "search", "data": ["text:hey, dude"]}' -H 'Content-Type: application/json' 'http://0.0.0.0:65481/api/search'
 ```
 
 <details>

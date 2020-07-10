@@ -6,7 +6,7 @@ This is where we dive deeper to learn what happens inside each Flow and how they
 
 <img src="https://raw.githubusercontent.com/jina-ai/jina/master/docs/chapters/101/img/ILLUS10.png" width="30%" align="left">
 
-Just as a plant manages nutrient flow and growth rate for its branches, Flow manages the states and context of a group of Pods, orchestrating them to accomplish one task. Whether a Pod is remote or running in Docker, one Flow rules them all!
+Just as a plant manages nutrient flow and growth rate for its branches, a Flow manages the states and context of a group of Pods, orchestrating them to accomplish one task. Whether a Pod is remote or running in Docker, one Flow rules them all!
 
 We define Flows in `app.py` to index and query the content in our South Park dataset.
 
@@ -41,10 +41,10 @@ Our Pods perform all the tasks needed to make this happen:
 
 | Pod             | Task                                                 |
 | ---             | ---                                                  |
-| `splitter`      | Split the text file into sentences                   |
-| `encoder`       | Encode each sentence into a vector                   |
+| `splitter`      | Split the Document into Chunks                       |
+| `encoder`       | Encode each Chunk into a vector                      |
 | `chunk_indexer` | Build an index of Chunks                             |
-| `doc_indexer`   | Store the document content                           |
+| `doc_indexer`   | Store the Document content                           |
 | `join_all`      | Join the `chunk_indexer` and `doc_indexer` pathways |
 
 
