@@ -167,6 +167,8 @@ Now that the app is running in search mode, we can search from the web browser w
 
 #### Curl
 
+`curl` will spit out a *lot* of information in JSON format - not just the lines you're searching for, but all sorts of metadata about the search and the lines it returns. Look for the lines starting with `"matchDoc"` to find the matches.
+
 ```bash
 curl --request POST -d '{"top_k": 10, "mode": "search", "data": ["text:hey, dude"]}' -H 'Content-Type: application/json' 'http://0.0.0.0:65481/api/search'
 ```
