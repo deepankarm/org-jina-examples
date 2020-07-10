@@ -307,7 +307,7 @@ We first use the built-in `TransformerTorchEncoder` as the **[Executor](https://
       <strong><a href="./troubleshooting.md">⬅️ Previous: Troubleshooting</a></strong>
     </td>
     <td align="right" style="text-align:right">
-      <strong><a href="./wrap_up.md">Next: Wrap up ➡️</a></strong>
+      <strong><a href="./troubleshooting.md">Next: Troubleshooting ➡️</a></strong>
     </td>
   </tr>
 </table>

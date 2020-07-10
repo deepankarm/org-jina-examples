@@ -519,7 +519,7 @@ curl --request POST -d '{"top_k": 10, "mode": "search", "data": ["text:hey, dude
       <strong><a href="./setup.md">⬅️ Previous: Set up</a></strong>
     </td>
     <td align="right" style="text-align:right">
-      <strong><a href="./troubleshooting.md">Next: Troubleshooting ➡️</a></strong>
+      <strong><a href="./understanding.md">Next: Understanding Jina ➡️</a></strong>
     </td>
   </tr>
 </table>
