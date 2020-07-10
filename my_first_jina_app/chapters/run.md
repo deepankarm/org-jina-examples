@@ -174,6 +174,340 @@ curl --request POST -d '{"top_k": 10, "mode": "search", "data": ["text:hey, dude
 <details>
 <summary>Click here to see the console output</summary>
 
+```json
+{
+  "search": {
+    "docs": [
+      {
+        "chunks": [
+          {
+            "chunkId": 2859771895,
+            "embedding": {},
+            "weight": 1.0,
+            "length": 1,
+            "topkResults": [
+              {
+                "matchChunk": {
+                  "docId": 454,
+                  "chunkId": 797264081,
+                  "offset": 1,
+                  "weight": 1.0,
+                  "length": 2,
+                  "mimeType": "text/plain",
+                  "location": [
+                    8,
+                    55
+                  ]
+                },
+                "score": {
+                  "value": 2.6883826,
+                  "opName": "NumpyIndexer"
+                }
+              },
+              {
+                "matchChunk": {
+                  "docId": 287,
+                  "chunkId": 1142950297,
+                  "offset": 1,
+                  "weight": 1.0,
+                  "length": 2,
+                  "mimeType": "text/plain",
+                  "location": [
+                    8,
+                    69
+                  ]
+                },
+                "score": {
+                  "value": 2.747776,
+                  "opName": "NumpyIndexer"
+                }
+              },
+              {
+                "matchChunk": {
+                  "docId": 418,
+                  "chunkId": 3396351234,
+                  "offset": 1,
+                  "weight": 1.0,
+                  "length": 2,
+                  "mimeType": "text/plain",
+                  "location": [
+                    8,
+                    33
+                  ]
+                },
+                "score": {
+                  "value": 2.7522104,
+                  "opName": "NumpyIndexer"
+                }
+              },
+              {
+                "matchChunk": {
+                  "docId": 158,
+                  "chunkId": 1398208945,
+                  "offset": 1,
+                  "weight": 1.0,
+                  "length": 2,
+                  "mimeType": "text/plain",
+                  "location": [
+                    8,
+                    25
+                  ]
+                },
+                "score": {
+                  "value": 2.9864397,
+                  "opName": "NumpyIndexer"
+                }
+              },
+              {
+                "matchChunk": {
+                  "docId": 345,
+                  "chunkId": 3441934356,
+                  "offset": 1,
+                  "weight": 1.0,
+                  "length": 2,
+                  "mimeType": "text/plain",
+                  "location": [
+                    13,
+                    40
+                  ]
+                },
+                "score": {
+                  "value": 2.994561,
+                  "opName": "NumpyIndexer"
+                }
+              },
+              {
+                "matchChunk": {
+                  "docId": 42,
+                  "chunkId": 2326393068,
+                  "offset": 1,
+                  "weight": 1.0,
+                  "length": 2,
+                  "mimeType": "text/plain",
+                  "location": [
+                    5,
+                    30
+                  ]
+                },
+                "score": {
+                  "value": 3.03432,
+                  "opName": "NumpyIndexer"
+                }
+              },
+              {
+                "matchChunk": {
+                  "docId": 374,
+                  "chunkId": 3848825176,
+                  "offset": 1,
+                  "weight": 1.0,
+                  "length": 2,
+                  "mimeType": "text/plain",
+                  "location": [
+                    5,
+                    35
+                  ]
+                },
+                "score": {
+                  "value": 3.080478,
+                  "opName": "NumpyIndexer"
+                }
+              },
+              {
+                "matchChunk": {
+                  "docId": 169,
+                  "chunkId": 174461633,
+                  "offset": 1,
+                  "weight": 1.0,
+                  "length": 2,
+                  "mimeType": "text/plain",
+                  "location": [
+                    6,
+                    17
+                  ]
+                },
+                "score": {
+                  "value": 3.0987353,
+                  "opName": "NumpyIndexer"
+                }
+              },
+              {
+                "matchChunk": {
+                  "docId": 70,
+                  "chunkId": 614007298,
+                  "offset": 1,
+                  "weight": 1.0,
+                  "length": 2,
+                  "mimeType": "text/plain",
+                  "location": [
+                    8,
+                    38
+                  ]
+                },
+                "score": {
+                  "value": 3.1020787,
+                  "opName": "NumpyIndexer"
+                }
+              },
+              {
+                "matchChunk": {
+                  "docId": 102,
+                  "chunkId": 3182665395,
+                  "offset": 1,
+                  "weight": 1.0,
+                  "length": 2,
+                  "mimeType": "text/plain",
+                  "location": [
+                    8,
+                    21
+                  ]
+                },
+                "score": {
+                  "value": 3.1413307,
+                  "opName": "NumpyIndexer"
+                }
+              }
+            ],
+            "mimeType": "text/plain",
+            "location": [
+              0,
+              14
+            ]
+          }
+        ],
+        "weight": 1.0,
+        "length": 1,
+        "topkResults": [
+          {
+            "matchDoc": {
+              "docId": 454,
+              "weight": 1.0,
+              "mimeType": "text/plain",
+              "text": "Cartman! Wendy, don't forget: I'll tell my mom on you.\n"
+            },
+            "score": {
+              "value": 0.74899185,
+              "opName": "BiMatchRanker"
+            }
+          },
+          {
+            "matchDoc": {
+              "docId": 287,
+              "weight": 1.0,
+              "mimeType": "text/plain",
+              "text": "Michael! Yeah, so listen: call up Firkle and meet me at Village Inn.\n"
+            },
+            "score": {
+              "value": 0.74896955,
+              "opName": "BiMatchRanker"
+            }
+          },
+          {
+            "matchDoc": {
+              "docId": 418,
+              "weight": 1.0,
+              "mimeType": "text/plain",
+              "text": "Cartman! Hey-where are you guys?\n"
+            },
+            "score": {
+              "value": 0.74896795,
+              "opName": "BiMatchRanker"
+            }
+          },
+          {
+            "matchDoc": {
+              "docId": 158,
+              "weight": 1.0,
+              "mimeType": "text/plain",
+              "text": "Cartman! Oh, shit, dude!\n"
+            },
+            "score": {
+              "value": 0.7488801,
+              "opName": "BiMatchRanker"
+            }
+          },
+          {
+            "matchDoc": {
+              "docId": 345,
+              "weight": 1.0,
+              "mimeType": "text/plain",
+              "text": "CityWokOwner! I'm not stereotype, okay!\n"
+            },
+            "score": {
+              "value": 0.74887705,
+              "opName": "BiMatchRanker"
+            }
+          },
+          {
+            "matchDoc": {
+              "docId": 42,
+              "weight": 1.0,
+              "mimeType": "text/plain",
+              "text": "Stan! No, dude, I feel worse!\n"
+            },
+            "score": {
+              "value": 0.74886215,
+              "opName": "BiMatchRanker"
+            }
+          },
+          {
+            "matchDoc": {
+              "docId": 374,
+              "weight": 1.0,
+              "mimeType": "text/plain",
+              "text": "Kyle! Hey, uh, Jimmy, can we talk?\n"
+            },
+            "score": {
+              "value": 0.7488448,
+              "opName": "BiMatchRanker"
+            }
+          },
+          {
+            "matchDoc": {
+              "docId": 169,
+              "weight": 1.0,
+              "mimeType": "text/plain",
+              "text": "Randy! Hey yeah.\n"
+            },
+            "score": {
+              "value": 0.74883795,
+              "opName": "BiMatchRanker"
+            }
+          },
+          {
+            "matchDoc": {
+              "docId": 70,
+              "weight": 1.0,
+              "mimeType": "text/plain",
+              "text": "Michael! Hey, you wanna play with me?\n"
+            },
+            "score": {
+              "value": 0.7488367,
+              "opName": "BiMatchRanker"
+            }
+          },
+          {
+            "matchDoc": {
+              "docId": 102,
+              "weight": 1.0,
+              "mimeType": "text/plain",
+              "text": "Cartman! Well hello.\n"
+            },
+            "score": {
+              "value": 0.748822,
+              "opName": "BiMatchRanker"
+            }
+          }
+        ],
+        "mimeType": "text/plain",
+        "text": "text:hey, dude"
+      }
+    ],
+    "topK": 10
+  },
+  "status": {}
+}
+```
+
 <p align="center">
   <img src="images/query-demo.png?raw=true" alt="query flow console output">
 </p>
