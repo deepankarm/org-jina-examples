@@ -121,11 +121,38 @@ python app.py index
 ```
 
 <details>
-<summary>Click here to see the console output</summary>
+<summary>See console output</summary>
 
-<p align="center">
-  <img src="images/index-demo.png?raw=true" alt="index flow console output">
-</p>
+```console
+index [====                ] 📃    256 ⏱️ 52.1s 🐎 4.9/s      4      batch        encoder@273512[I]:received "control" from gateway▸crafter▸encoder-head▸encoder-2▸⚐
+        encoder@273512[I]:received "index" from gateway▸crafter▸⚐               
+        encoder@273516[I]:received "index" from gateway▸crafter▸encoder-head▸encoder-2▸⚐
+        encoder@273525[I]:received "index" from gateway▸crafter▸encoder-head▸⚐    
+      chunk_idx@273529[I]:received "index" from gateway▸crafter▸encoder-head▸encoder-2▸encoder-tail▸⚐
+      chunk_idx@273537[I]:received "index" from gateway▸crafter▸encoder-head▸encoder-2▸encoder-tail▸chunk_idx-head▸⚐
+      chunk_idx@273529[I]:received "control" from gateway▸crafter▸encoder-head▸encoder-2▸encoder-tail▸chunk_idx-head▸chunk_idx-1▸⚐
+      chunk_idx@273533[I]:received "index" from gateway▸crafter▸encoder-head▸encoder-2▸encoder-tail▸chunk_idx-head▸chunk_idx-1▸⚐
+       join_all@273549[I]:received "index" from gateway▸crafter▸encoder-head▸encoder-2▸encoder-tail▸chunk_idx-head▸chunk_idx-1▸chunk_idx-tail▸⚐
+       join_all@273549[I]:collected 2/2 parts of IndexRequest                    
+index [=====               ] 📃    320 ⏱️ 71.2s 🐎 4.5/s      5      batch        encoder@273512[I]:received "control" from gateway▸crafter▸encoder-head▸encoder-1▸⚐
+        encoder@273512[I]:received "index" from gateway▸crafter▸⚐
+        encoder@273516[I]:received "index" from gateway▸crafter▸encoder-head▸encoder-1▸⚐
+        encoder@273520[I]:received "index" from gateway▸crafter▸encoder-head▸⚐    
+      chunk_idx@273529[I]:received "index" from gateway▸crafter▸encoder-head▸encoder-1▸encoder-tail▸⚐                        
+      chunk_idx@273541[I]:received "index" from gateway▸crafter▸encoder-head▸encoder-1▸encoder-tail▸chunk_idx-head▸⚐
+      chunk_idx@273529[I]:received "control" from gateway▸crafter▸encoder-head▸encoder-1▸encoder-tail▸chunk_idx-head▸chunk_idx-2▸⚐
+      chunk_idx@273533[I]:received "index" from gateway▸crafter▸encoder-head▸encoder-1▸encoder-tail▸chunk_idx-head▸chunk_idx-2▸⚐                           
+       join_all@273549[I]:received "index" from gateway▸crafter▸encoder-head▸encoder-1▸encoder-tail▸chunk_idx-head▸chunk_idx-2▸chunk_idx-tail▸⚐
+       join_all@273549[I]:collected 2/2 parts of IndexRequest                       
+index [======              ] 📃    384 ⏱️ 71.4s 🐎 5.4/s      6      batch        encoder@273512[I]:received "control" from gateway▸crafter▸encoder-head▸encoder-1▸⚐
+        encoder@273516[I]:received "index" from gateway▸crafter▸encoder-head▸encoder-1▸⚐
+      chunk_idx@273529[I]:received "index" from gateway▸crafter▸encoder-head▸encoder-1▸encoder-tail▸⚐
+      chunk_idx@273537[I]:received "index" from gateway▸crafter▸encoder-head▸encoder-1▸encoder-tail▸chunk_idx-head▸⚐
+      chunk_idx@273529[I]:received "control" from gateway▸crafter▸encoder-head▸encoder-1▸encoder-tail▸chunk_idx-head▸chunk_idx-1▸⚐
+      chunk_idx@273533[I]:received "index" from gateway▸crafter▸encoder-head▸encoder-1▸encoder-tail▸chunk_idx-head▸chunk_idx-1▸⚐
+       join_all@273549[I]:received "index" from gateway▸crafter▸encoder-head▸encoder-1▸encoder-tail▸chunk_idx-head▸chunk_idx-1▸chunk_idx-tail▸⚐
+       join_all@273549[I]:collected 2/2 parts of IndexRequest
+```
 
 </details>
 
@@ -168,7 +195,7 @@ curl --request POST -d '{"top_k": 10, "mode": "search", "data": ["text:hey, dude
 ```
 
 <details>
-<summary>Click here to see the console output</summary>
+<summary>See console output</summary>
 
 ```json
 {
