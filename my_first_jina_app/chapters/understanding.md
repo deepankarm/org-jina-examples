@@ -6,7 +6,7 @@ This is where we dive deeper to learn what happens inside each Flow and how they
 
 <img src="https://raw.githubusercontent.com/jina-ai/jina/master/docs/chapters/101/img/ILLUS10.png" width="30%" align="left">
 
-Just as a plant manages nutrient flow and growth rate for its branches, a Flow manages the states and context of a group of Pods, orchestrating them to accomplish one task. Whether a Pod is remote or running in Docker, one Flow rules them all!
+As we saw in [Jina 101](https://github.com/jina-ai/jina/tree/master/docs/chapters/101), just as a plant manages nutrient flow and growth rate for its branches, a Flow manages the states and context of a group of Pods, orchestrating them to accomplish one task. Whether a Pod is remote or running in Docker, one Flow rules them all!
 
 We define Flows in `app.py` to index and query the content in our South Park dataset.
 
@@ -41,10 +41,10 @@ Our Pods perform all the tasks needed to make this happen:
 
 | Pod             | Task                                                 |
 | ---             | ---                                                  |
-| `splitter`      | Split the Document into Chunks                       |
+| `crafter`       | Split the Document into Chunks                       |
 | `encoder`       | Encode each Chunk into a vector                      |
-| `chunk_indexer` | Build an index of Chunks                             |
-| `doc_indexer`   | Store the Document content                           |
+| `chunk_idx`     | Build an index of Chunks                             |
+| `doc_idx`       | Store the Document content                           |
 | `join_all`      | Join the `chunk_indexer` and `doc_indexer` pathways |
 
 
@@ -221,11 +221,12 @@ So in the query Flow we've got the following Pods:
 
 | Pod             | Task                                                 |
 | ---             | ---                                                  |
-| `splitter`      | Split the user query into meaningful words           |
+| `chunk_seg`     | Segments the user query into meaningful Chunks       |
 | `encoder`       | Encode each word into a vector                       |
-| `chunk_indexer` | Build an index for the words for fast lookup         |
-| `ranker`        | Combine query results into one document              |
-| `doc_indexer`   | Store the document content                           |
+| `tf_encode`     |                                                      |
+| `chunk_indexer` | Build an index for the Chunks for fast lookup        |
+| `ranker`        | Combine returned results into one Document           |
+| `doc_idx`       | Store the Document content                           |
 
 Since many of the Pods are the same as in indexing, they share the same YAML but perform differently based on the task at hand.
 
@@ -263,7 +264,7 @@ This is how Pods in both Flows can play different roles while sharing the same Y
 
 <img src="https://raw.githubusercontent.com/jina-ai/jina/master/docs/chapters/101/img/ILLUS8.png" width="20%" align="left">
 
-You can think of the Flow as telling Jina *what* tasks to perform on the dataset. The Pods comprise the Flow and tell Jina *how* to perform each task.
+You can think of the Flow as telling Jina *what* tasks to perform on the dataset. The Pods comprise the Flow and tell Jina *how* to perform each task, and they define the actual neural networks we use in neural search, namely the machine-learning models like `distilbert-base-cased`.
 
 As you may recall from [Jina 101](https://github.com/jina-ai/jina/tree/master/docs/chapters/101), A Pod is a group of Peas with the same property, running in parallel on a local host or over the network. A Pod provides a single network interface for its Peas, making them look like one single Pea from the outside. Beyond that, a Pod adds further control, scheduling, and context management to the Peas.
 
