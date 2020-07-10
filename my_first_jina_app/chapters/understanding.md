@@ -28,12 +28,12 @@ Every Flow has well, a flow to it. Different Pods pass data along the Flow, with
 <img src="images/flow-index.png">
 </p>
 
-Right now our South Park dataset is just one big text file. Our Flow needs to process it into a useful state, which we do with Pods. Each Pod in the Flow performs a different task.
+Right now our South Park dataset is just one big text file. Our Flow will process it into a useful state, which is handled by the Pods in the Flow. Each Pod performs a different task.
 
 In Jina 101, we discussed [Documents and Chunks](https://github.com/jina-ai/jina/tree/master/docs/chapters/101#document--chunk). In our indexing Flow, we:
 
 * Break our giant text file into sentences. We'll regard each sentence as a Document (For simplicity, each Document has only one Chunk, containing the same sentence as the Document)
-* Encode each sentence, as a Chunk, into a vector (in this case, using a Pod which specifies DistilBert from the [🤗Transformers library](https://huggingface.co/transformers))
+* Encode each sentence, as a Chunk, into a vector (in this case, using a Pod which specifies `distilbert` from the [🤗Transformers library](https://huggingface.co/transformers))
 * Build indexes for each Chunk and Document for fast lookup
 * Store the vectors in our indexes
 
@@ -223,7 +223,7 @@ So, in the query Flow we've got the following Pods:
 | ---             | ---                                                  |
 | `chunk_seg`     | Segments the user query into meaningful Chunks       |
 | `encoder`       | Encode each word into a vector                       |
-| `tf_encode`     |                                                      |
+| `tf_encode`     | XXX                                                  |
 | `chunk_indexer` | Build an index for the Chunks for fast lookup        |
 | `ranker`        | Combine returned results into one Document           |
 | `doc_idx`       | Store the Document content                           |
