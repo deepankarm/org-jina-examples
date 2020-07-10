@@ -46,62 +46,136 @@ curl --request POST -d '{"top_k": 10, "mode": "search", "data": ["text:hey, dude
   "search": {
     "docs": [
       {
-        "chunks": [
-          {
-            "chunkId": 225641550,
-            "embedding": {},
-            "weight": 1.0,
-            "length": 1,
-            "topkResults": [
-              {
-                "matchChunk": {
-                  "docId": 7,
-                  "chunkId": 401451721,
-                  "offset": 1,
-                  "weight": 1.0,
-                  "length": 2,
-                  "mimeType": "text/plain",
-                  "location": [
-                    6,
-                    17
-                  ]
-                },
-                "score": {
-                  "value": 3.5258932,
-                  "opName": "NumpyIndexer"
-                }
-              }
-            ],
-            "mimeType": "text/plain",
-            "location": [
-              0,
-              10
-            ]
-          }
-        ],
         "weight": 1.0,
         "length": 1,
         "topkResults": [
           {
             "matchDoc": {
-              "docId": 7,
+              "docId": 48,
               "weight": 1.0,
               "mimeType": "text/plain",
-              "text": "Satan! Good-bye.\n"
+              "text": "Cartman[SEP]Hey, hey, did you see my iPad, Token?\n"
             },
             "score": {
-              "value": 0.7486778,
-              "opName": "BiMatchRanker"
+              "value": 0.29252166,
+              "opName": "MinRanker"
+            }
+          },
+          {
+            "matchDoc": {
+              "docId": 9322,
+              "weight": 1.0,
+              "mimeType": "text/plain",
+              "text": "Stan[SEP]Oh thanks, dude.\n"
+            },
+            "score": {
+              "value": 0.29002887,
+              "opName": "MinRanker"
+            }
+          },
+          {
+            "matchDoc": {
+              "docId": 4053,
+              "weight": 1.0,
+              "mimeType": "text/plain",
+              "text": "Kyle[SEP]Here's our cell phone, dude.\n"
+            },
+            "score": {
+              "value": 0.28318727,
+              "opName": "MinRanker"
+            }
+          },
+          {
+            "matchDoc": {
+              "docId": 2134,
+              "weight": 1.0,
+              "mimeType": "text/plain",
+              "text": "Kyle[SEP]Oh hey dude.\n"
+            },
+            "score": {
+              "value": 0.28181127,
+              "opName": "MinRanker"
+            }
+          },
+          {
+            "matchDoc": {
+              "docId": 5083,
+              "weight": 1.0,
+              "mimeType": "text/plain",
+              "text": "Henrietta[SEP]Thanks you guys.\n"
+            },
+            "score": {
+              "value": 0.27215105,
+              "opName": "MinRanker"
+            }
+          },
+          {
+            "matchDoc": {
+              "docId": 2823,
+              "weight": 1.0,
+              "mimeType": "text/plain",
+              "text": "Cartman[SEP]Kyle, I want you to check his buddy list.\n"
+            },
+            "score": {
+              "value": 0.27158132,
+              "opName": "MinRanker"
+            }
+          },
+          {
+            "matchDoc": {
+              "docId": 4291,
+              "weight": 1.0,
+              "mimeType": "text/plain",
+              "text": "Kyle[SEP]What are you talking about, dude!\n"
+            },
+            "score": {
+              "value": 0.2715585,
+              "opName": "MinRanker"
+            }
+          },
+          {
+            "matchDoc": {
+              "docId": 3386,
+              "weight": 1.0,
+              "mimeType": "text/plain",
+              "text": "Kyle[SEP]Wow, dude, check it out!\n"
+            },
+            "score": {
+              "value": 0.27094495,
+              "opName": "MinRanker"
+            }
+          },
+          {
+            "matchDoc": {
+              "docId": 4613,
+              "weight": 1.0,
+              "mimeType": "text/plain",
+              "text": "Kyle[SEP]Oh no, dude!\n"
+            },
+            "score": {
+              "value": 0.2704847,
+              "opName": "MinRanker"
+            }
+          },
+          {
+            "matchDoc": {
+              "docId": 890,
+              "weight": 1.0,
+              "mimeType": "text/plain",
+              "text": "Stan[SEP]Hey you guys!\n"
+            },
+            "score": {
+              "value": 0.27007768,
+              "opName": "MinRanker"
             }
           }
         ],
         "mimeType": "text/plain",
-        "text": "text:Hello"
+        "text": "text:hey, dude"
       }
     ],
-    "topK": 1
-  },
-  "status": {}
+    "topK": 10
+  }
 }
 ```
 

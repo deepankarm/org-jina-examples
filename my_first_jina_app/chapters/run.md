@@ -2,6 +2,8 @@
 
 ⚠️ Now we're going to get our hands dirty, and if we're going to run into trouble, this is where we'll find it. If you hit any snags, check our **[troubleshooting](./troubleshooting.md)** section!
 
+ℹ️ In this tutorial we're using Jina's RESTful API. In [other examples](https://github.com/jina-ai/examples) we currently use gRPC. So if the code seems a litte different, that's why!
+
 ## Prepare the Data
 
 Our goal is to find out who said what in South Park episodes when a user queries a phrase. The [SouthPark dataset](https://github.com/BobAdamsEE/SouthParkData/) contains the characters and lines from seasons 1 to 19. Many thanks to [BobAdamsEE](https://github.com/BobAdamsEE) for sharing this awesome resource!👏
