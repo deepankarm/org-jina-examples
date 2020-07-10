@@ -28,7 +28,7 @@ Every Flow has well, a flow to it. Different Pods pass data along the Flow, with
 <img src="images/flow-index.png">
 </p>
 
-Right now our data is just one big text file. Our Flow needs to process it into a useful state, which we do with Pods. Each Pod in the Flow performs a different task.
+Right now our South Park dataset is just one big text file. Our Flow needs to process it into a useful state, which we do with Pods. Each Pod in the Flow performs a different task.
 
 In Jina 101, we discussed [Documents and Chunks](https://github.com/jina-ai/jina/tree/master/docs/chapters/101#document--chunk). In our indexing Flow, we:
 
@@ -215,9 +215,9 @@ pods:
 </tr>
 </table>
 
-In indexing we have to break down the Document into Chunks and index it. For querying we need to do the same with a user's query, and we can use many of the same Pods. There are a few differences though:
+In indexing we have to break down the Document into Chunks and index it. For querying we do the same, regarding the query as a Document, and we can use many of the same Pods. There are a few differences though:
 
-So in the query Flow we've got the following Pods:
+So, in the query Flow we've got the following Pods:
 
 | Pod             | Task                                                 |
 | ---             | ---                                                  |
@@ -254,6 +254,8 @@ While the two Flows share (most of) the same Pods, there are some differences in
 * Query has a single pipeline
 
 #### Request Messages
+
+XXX @nan - this seems more gRPCish - how would it work for RESTful?
 
 * For indexing, we send an **IndexRequest** to the Flow
 * For querying, we send a **SearchRequest** to the Flow
