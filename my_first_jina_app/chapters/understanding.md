@@ -270,7 +270,7 @@ You can think of the Flow as telling Jina *what* tasks to perform on the dataset
 
 As you may recall from [Jina 101](https://github.com/jina-ai/jina/tree/master/docs/chapters/101), A Pod is a group of Peas with the same property, running in parallel on a local host or over the network. A Pod provides a single network interface for its Peas, making them look like one single Pea from the outside. Beyond that, a Pod adds further control, scheduling, and context management to the Peas.
 
-As a convention in Jina, we use YAML files to describe objects. This way we can easily configure the behavior of the Pods without touching their application code.
+As a convention in Jina, we use YAML files to describe objects like Flows and Pods. This way we can easily configure the behavior of the Pods without touching their application code.
 
 Let's start by looking at our indexing Flow, `flows/index.yml`. Instead of the first Pod `crafter`, let's look at `encoder` which is a bit simpler:
 

@@ -9,28 +9,22 @@ Our goal is to find out who said what in South Park episodes when a user queries
 The raw data contains season, episode, character, and line information in the `.csv` format as follows:
 
 ```csv
-Season,Episode,Character,Line
-10,1,Stan,"You guys, you guys! Chef is going away.
-"
-10,1,Kyle,"Going away? For how long?
-"
-10,1,Stan,"Forever.
-"
-10,1,Chef,"I'm sorry boys.
+Stan! I don't wanna talk about it, I jus' wanna leave.
+Mysterion! Mrs.
+Sally! Pa-pa.
+Canadians! We want respect!
+Phillip! That smelly Saddam Hussein.
+Cartman! Strike me down while you can!
+Morpheus! What if I were to tell you.
+Kanye! Yep, got it.
+Jimbo! Here we are at Shafer's Crossing, lookin' for some animals.
+Kyle! it's okay.
 ```
 
-If you're a human and want to read that more easily:
-
-| Season | Episode | Character | Line                                    | 
-| ---    | ---     | ---       | ---                                     | 
-| 10     | 1       | Stan      | "You guys you guys! Chef is going away." | 
-| 10     | 1       | Kyle      | "Going away? For how long?"              |
-| 10     | 1       | Stan      | "Forever."                               |
-| 10     | 1       | Chef      | "I'm sorry boys."                        |
-
-Now let's ensure we're back in our base folder (from the repo you cloned earlier, *not* the `south_park` folder) and download this dataset by running:
+Now let's ensure we're back in our base folder and download this dataset by running:
 
 ```bash
+cd ..
 bash ./get_data.sh
 ```
 
@@ -49,15 +43,11 @@ Resolving deltas: 100% (40/40), done.
 
 ## Load the Data
 
-Now that we've got the data, we need to pass it into `app.py`. `app.py` is pretty simple out of the box, so we'll have to make some changes. First of all:
-
-```shell
-cd south_park
-```
+Now that we've got the data, we need to pass it into `app.py`. `app.py` is pretty simple out of the box, so we'll have to make some changes:
 
 ### Check the Data
 
-Let's just ensure the file has everything we want:
+Let's just make sure the file has everything we want:
 
 ```shell
 head data/character-lines.csv
@@ -77,6 +67,8 @@ Kanye! Yep, got it.
 Jimbo! Here we are at Shafer's Crossing, lookin' for some animals.
 Kyle! it's okay.
 ```
+
+In the lines above, `!` acts as a separator between the character and what they say.
 
 ### Add `filepath`
 
@@ -112,7 +104,7 @@ to:
 num_docs = os.environ.get('MAX_DOCS', 500)
 ```
 
-That should speed up our testing by a factor of 100! Once we've verified everything works we can set it back to `50000` to index more of our dataset. If it still seems to slow, just reduce that number down to 50 or so.
+That should speed up our testing by a factor of 100! Once we've verified everything works we can set it back to `50000` to index more of our dataset. If it still seems to slow, reduce that number down to 50 or so.
 
 ## Run the Flows
 
