@@ -509,11 +509,6 @@ curl --request POST -d '{"top_k": 10, "mode": "search", "data": ["text:hey, dude
   "status": {}
 }
 ```
-
-<p align="center">
-  <img src="images/query-demo.png?raw=true" alt="query flow console output">
-</p>
-
 </details>
 
 
