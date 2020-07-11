@@ -20,18 +20,7 @@ Our example program will be a simple neural search engine for text. It will take
 * [Troubleshooting](chapters/troubleshooting.md)
 * [Wrap up](05_wrap_up.md) - not done yet
 
-Need support? First check out our [troubleshooting section](chapters/03_troubleshooting.md). If that doesn't work, hit up our #support channel on our [Slack](https://jina-ai.slack.com/messages/support/)!
-
-## ⛏️ Next Up: Dig Deeper
-
-**Note: Not done yet, but including here as a TODO for now**
-
-If you've gone through the above steps you've already got one project under your belt. Nice! Stay tuned to expand South Park search even further:
-
-* Run your encoding remotely
-* Run Jina in Docker
-* Scale up
-* Search different things (images, videos, you name it)
+⚠️ Need support? First check out our [troubleshooting section](chapters/03_troubleshooting.md). If that doesn't work, hit up our #support channel on our [Slack](https://jina-ai.slack.com/messages/support/)!
 
 <table width="100%">
   <tr>
