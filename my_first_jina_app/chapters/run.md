@@ -110,11 +110,11 @@ That should speed up our testing by a factor of 100! Once we've verified everyth
 
 ## Run the Flows
 
-Now that we've loaded our data, we're going to dive into writing our app and running our Flows!
+Now that we've got the code to load our data, we're going to dive into writing our app and running our Flows!
 
 ### Index Mode
 
-First up we need to build up an index of our file, which is what we search:
+First up we need to build up an index of our file. We'll search through this index when we use the query Flow later.
 
 ```bash
 python app.py index
@@ -170,9 +170,9 @@ After a while you should see the console stop scrolling and display output like:
 Flow@85144[S]:flow is started at 0.0.0.0:65481, you can now use client to send request!
 ```
 
-Be sure to note down the port number. We'll need it for `curl` and jinabox! In our case we'll assume it's `65481`, and we use that in the below examples. If your port number is different, be sure to use that instead.
+⚠️  Be sure to note down the port number. We'll need it for `curl` and jinabox! In our case we'll assume it's `65481`, and we use that in the below examples. If your port number is different, be sure to use that instead.
 
-Note: This doesn't pop up a search interface - for that you'll need to connect via `curl`, Jinabox, or another client.
+ℹ️  `python app.py search` doesn't pop up a search interface - for that you'll need to connect via `curl`, Jinabox, or another client.
 
 ### Searching Data
 
