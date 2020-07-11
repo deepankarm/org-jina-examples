@@ -180,7 +180,7 @@ Now that the app is running in search mode, we can search from the web browser w
 
 #### Jinabox
 
-![](../jinabox-southpark.gif)
+![](./images/jinabox-southpark.gif)
  
 1. Go to [jinabox](https://jina.ai/jinabox.js) in your browser
 2. Ensure you have the server endpoint set to `http://localhost:65481/api/search`

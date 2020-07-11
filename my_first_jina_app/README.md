@@ -6,7 +6,7 @@ In this series of tutorials we'll guide you on the process of building your own 
 
 <p align="center">
 
-![](jinabox-southpark.gif)
+![](./chapters/images/jinabox-southpark.gif)
 
 </p>
 
