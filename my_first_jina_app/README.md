@@ -18,7 +18,7 @@ Our example program will be a simple neural search engine for text. It will take
 * [Run Jina](chapters/run.md)
 * [Understanding Jina](chapters/understanding.md)
 * [Troubleshooting](chapters/troubleshooting.md)
-* [Wrap up](05_wrap_up.md)
+* [Wrap up](chapters/wrap_up.md)
 
 ⚠️ Need support? First check out our [troubleshooting section](chapters/03_troubleshooting.md). If that doesn't work, hit up our #support channel on our [Slack](https://jina-ai.slack.com/messages/support/)!
 
