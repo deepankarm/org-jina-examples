@@ -97,21 +97,21 @@ We start by defining the index and query Flows with the YAML files as follows. I
 !Flow
 pods:
   loader:
-    yaml_path: yaml/craft-load.yml
+    uses: yaml/craft-load.yml
   normalizer:
-    yaml_path: yaml/craft-normalize.yml
+    uses: yaml/craft-normalize.yml
     read_only: true
   encoder:
-    image: jinaai/hub.executors.encoders.image.torchvision-mobilenet_v2
+    uses: jinaai/hub.executors.encoders.image.torchvision-mobilenet_v2
     replicas: 4
     timeout_ready: 60000
   chunk_indexer:
-    yaml_path: yaml/index-chunk.yml
+    uses: yaml/index-chunk.yml
   doc_indexer:
-    yaml_path: yaml/index-doc.yml
+    uses: yaml/index-doc.yml
     needs: loader
   join_all:
-    yaml_path: _merge
+    uses: _merge
     needs: [doc_indexer, chunk_indexer]
 ```
 
@@ -133,18 +133,18 @@ with:
   read_only: true
 pods:
   loader:
-    yaml_path: yaml/craft-load.yml
+    uses: yaml/craft-load.yml
   normalizer:
-    yaml_path: yaml/craft-normalize.yml
+    uses: yaml/craft-normalize.yml
   encoder:
-    image: jinaai/hub.executors.encoders.image.torchvision-mobilenet_v2
+    uses: jinaai/hub.executors.encoders.image.torchvision-mobilenet_v2
     timeout_ready: 60000
   chunk_indexer:
-    yaml_path: yaml/index-chunk.yml
+    uses: yaml/index-chunk.yml
   ranker:
-    yaml_path: MinRanker
+    uses: MinRanker
   doc_indexer:
-    yaml_path: yaml/index-doc.yml
+    uses: yaml/index-doc.yml
 ```
 
 </sub>
@@ -175,7 +175,7 @@ In our YAML file, we've added the `encoder` Pod differently from the other Pods.
 !Flow
 pods:
   encoder:
-    image: jinaai/hub.executors.encoders.image.torchvision-mobilenet_v2
+    uses: jinaai/hub.executors.encoders.image.torchvision-mobilenet_v2
 ```
 
 Back to our example, here we use the Docker image containing the pre-trained `mobilenet_v2` model from the `torchvision` lib. So that you do **NOT** need to install the `torchvision` lib or download a pre-trained model. Everything is packed into the Docker image. As long as you have Docker installed, the container Pods will run out-of-the-box.
@@ -187,7 +187,7 @@ Another newcomer is the `replicas` argument. As its name implies, `replicas` def
 !Flow
 pods:
   encoder:
-    image: jinaai/hub.executors.encoders.image.torchvision-mobilenet_v2
+    uses: jinaai/hub.executors.encoders.image.torchvision-mobilenet_v2
     replicas: 4
 ```
 
@@ -274,23 +274,23 @@ We starts by adding a new Pod called `flipper`, to our Flow.
 !Flow
 pods:
   loader:
-    yaml_path: yaml/craft-load.yml
+    uses: yaml/craft-load.yml
   flipper:
-    yaml_path: yaml/craft-flip.yml
+    uses: yaml/craft-flip.yml
   normalizer:
-    yaml_path: yaml/craft-normalize.yml
+    uses: yaml/craft-normalize.yml
     read_only: true
   encoder:
-    image: jinaai/hub.executors.encoders.image.torchvision-mobilenet_v2
+    uses: jinaai/hub.executors.encoders.image.torchvision-mobilenet_v2
     replicas: 4
     timeout_ready: 60000
   chunk_indexer:
-    yaml_path: yaml/index-chunk.yml
+    uses: yaml/index-chunk.yml
   doc_indexer:
-    yaml_path: yaml/index-doc.yml
+    uses: yaml/index-doc.yml
     needs: loader
   join_all:
-    yaml_path: _merge
+    uses: _merge
     needs: [doc_indexer, chunk_indexer]
 ```
 
@@ -312,20 +312,20 @@ with:
   read_only: true
 pods:
   loader:
-    yaml_path: yaml/craft-load.yml
+    uses: yaml/craft-load.yml
   flipper:
-    yaml_path: yaml/craft-flip.yml
+    uses: yaml/craft-flip.yml
   normalizer:
-    yaml_path: yaml/craft-normalize.yml
+    uses: yaml/craft-normalize.yml
   encoder:
-    image: jinaai/hub.executors.encoders.image.torchvision-mobilenet_v2
+    uses: jinaai/hub.executors.encoders.image.torchvision-mobilenet_v2
     timeout_ready: 60000
   chunk_indexer:
-    yaml_path: yaml/index-chunk.yml
+    uses: yaml/index-chunk.yml
   ranker:
-    yaml_path: BiMatchRanker
+    uses: BiMatchRanker
   doc_indexer:
-    yaml_path: yaml/index-doc.yml
+    uses: yaml/index-doc.yml
 ```
 
 </sub>

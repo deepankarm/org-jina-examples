@@ -126,17 +126,17 @@ However, we have another Pod working in silence. In fact, the input to the very 
 !Flow
 pods:
   splitter:
-    yaml_path: pods/craft-split.yml
+    uses: pods/craft-split.yml
   encoder:
-    yaml_path: pods/encode.yml
+    uses: pods/encode.yml
     timeout_ready: 60000
   chunk_indexer:
-    yaml_path: pods/index-chunk.yml
+    uses: pods/index-chunk.yml
   doc_indexer:
-    yaml_path: pods/index-doc.yml
+    uses: pods/index-doc.yml
     needs: gateway
   join_all:
-    yaml_path: _merge
+    uses: _merge
     needs: [doc_indexer, chunk_indexer]
 ```
 
@@ -153,7 +153,7 @@ By default, the input of each Pod is the Pod defined right above it, and the req
 
 ```yaml
 doc_indexer:
-  yaml_path: pods/index-doc.yml
+  uses: pods/index-doc.yml
   needs: gateway
 ```
 
@@ -161,7 +161,7 @@ As we can see, for most Pods, we only need to define the YAML file path. Given t
 
 ```yaml
 encoder:
-  yaml_path: pods/encode.yml
+  uses: pods/encode.yml
   timeout_ready: 60000
 ```
 
@@ -169,7 +169,7 @@ You might also notice the `join_all` Pod has a special YAML path. It denotes a b
 
 ```yaml
 join_all:
-  yaml_path: _merge
+  uses: _merge
   needs: [doc_indexer, chunk_indexer]
 ```
 
@@ -198,16 +198,16 @@ with:
   read_only: true
 pods:
   splitter:
-    yaml_path: pods/craft-split.yml
+    uses: pods/craft-split.yml
   encoder:
-    yaml_path: pods/encode.yml
+    uses: pods/encode.yml
     timeout_ready: 60000
   chunk_indexer:
-    yaml_path: pods/index-chunk.yml
+    uses: pods/index-chunk.yml
   ranker:
-    yaml_path: MinRanker
+    uses: MinRanker
   doc_indexer:
-    yaml_path: pods/index-doc.yml
+    uses: pods/index-doc.yml
 ```
 
 </sub>
@@ -226,7 +226,7 @@ Eventually, there comes a new Pod named `ranker`. Remember that Chunks are the b
 
 ```yaml
 ranker:
-  yaml_path: MaxRanker
+  uses: MaxRanker
 ```
 
 In the last step, the `doc_indexer` comes into play. Sharing the same YAML file, `doc_indexer` will load the stored key-value index and retrieve the matched Documents according to the Document ID.

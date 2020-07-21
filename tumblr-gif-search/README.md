@@ -63,22 +63,22 @@ with:
   logserver: true
 pods:
   chunk_seg:
-    yaml_path: craft/index-craft.yml
+    uses: craft/index-craft.yml
     replicas: $REPLICAS
     read_only: true
   doc_idx:
-    yaml_path: index/doc.yml
+    uses: index/doc.yml
   tf_encode:
-    yaml_path: encode/encode.yml
+    uses: encode/encode.yml
     needs: chunk_seg
     replicas: $REPLICAS
     read_only: true
   chunk_idx:
-    yaml_path: index/chunk.yml
+    uses: index/chunk.yml
     replicas: $SHARDS
     separated_workspace: true
   join_all:
-    yaml_path: _merge
+    uses: _merge
     needs: [doc_idx, chunk_idx]
     read_only: true
 ```
@@ -106,22 +106,22 @@ with:
   read_only: true  # better add this in the query time
 pods:
   chunk_seg:
-    yaml_path: craft/index-craft.yml
+    uses: craft/index-craft.yml
     replicas: $REPLICAS
   tf_encode:
-    yaml_path: encode/encode.yml
+    uses: encode/encode.yml
     replicas: $REPLICAS
   chunk_idx:
-    yaml_path: index/chunk.yml
+    uses: index/chunk.yml
     replicas: $SHARDS
     separated_workspace: true
     polling: all
-    reducing_yaml_path: _merge_topk_chunks
+    uses_reducing: _merge_topk_chunks
     timeout_ready: 100000 # larger timeout as in query time will read all the data
   ranker:
-    yaml_path: BiMatchRanker
+    uses: BiMatchRanker
   doc_idx:
-    yaml_path: index/doc.yml
+    uses: index/doc.yml
 ```
 
 ```bash
@@ -264,14 +264,14 @@ If you think about it, a multi-replica indexer behaves no differently than a mul
 
 In the query time, replicas and shards behave differently on how they handle new requests. Replicas still compete on each request as they do in the index time. Shards, however, work more cooperatively: each request is published to *all* replicas, each replica works on the same request, and the final result has to be collected from all replicas.
 
-In Jina, such behavior in the query time can be simply specified via `polling` and `reducing_yaml_path`:
+In Jina, such behavior in the query time can be simply specified via `polling` and `uses_reducing`:
 
 ```yaml
     polling: all
-    reducing_yaml_path: _merge_topk_chunks
+    uses_reducing: _merge_topk_chunks
 ```
 
-`polling` and `reducing_yaml_path` are Pod-specific argument, you can find more details in `jina pod --help`.
+`polling` and `uses_reducing` are Pod-specific argument, you can find more details in `jina pod --help`.
 
 ```bash
 --polling {ANY, ALL, ALL_ASYNC}
@@ -279,8 +279,8 @@ In Jina, such behavior in the query time can be simply specified via `polling` a
     ALL: all workers poll the message (like a broadcast) 
     (choose from: {ANY, ALL, ALL_ASYNC}; default: ANY)
     
---reducing-yaml-path
-    the executor used for reducing the result from all replicas, accepted type follows "--yaml-path"
+--uses-reducing
+    the executor used for reducing the result from all replicas, accepted type follows "--uses"
     (type: str; default: _forward)
 ```
 

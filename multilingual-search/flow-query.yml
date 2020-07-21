@@ -3,21 +3,21 @@ with:
   read_only: true
 pods:
   crafter:
-    yaml_path: pods/crafter/craft.yml
+    uses: pods/crafter/craft.yml
     replicas: $REPLICAS
     read_only: true
   encoder:
-    yaml_path: pods/encoder/encode.yml
+    uses: pods/encoder/encode.yml
     replicas: $REPLICAS
     timeout_ready: 1200000
     read_only: true
   chunk_indexer:
-    yaml_path: pods/chunk_indexer/index-chunk.yml
+    uses: pods/chunk_indexer/index-chunk.yml
     replicas: $SHARDS
     separated_workspace: true
     polling: all
-    reducing_yaml_path: _merge_topk_chunks
+    uses_reducing: _merge_topk_chunks
   ranker:
-    yaml_path: MinRanker
+    uses: MinRanker
   doc_indexer:
-    yaml_path: pods/doc_indexer/index-doc.yml
+    uses: pods/doc_indexer/index-doc.yml

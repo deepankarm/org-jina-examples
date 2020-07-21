@@ -115,31 +115,31 @@ metas:
   prefetch: 10
 pods:
   loader:
-    yaml_path: yaml/craft-load.yml
+    uses: yaml/craft-load.yml
     replicas: $REPLICAS
     read_only: true
   flipper:
-    yaml_path: yaml/craft-flip.yml
+    uses: yaml/craft-flip.yml
     replicas: $REPLICAS
     read_only: true
   normalizer:
-    yaml_path: yaml/craft-normalize.yml
+    uses: yaml/craft-normalize.yml
     replicas: $REPLICAS
     read_only: true
   encoder:
-    image: jinaai/hub.executors.encoders.image.facenet
+    uses: jinaai/hub.executors.encoders.image.facenet
     replicas: $REPLICAS
     timeout_ready: 600000
     read_only: true
   chunk_indexer:
-    yaml_path: yaml/index-chunk.yml
+    uses: yaml/index-chunk.yml
     replicas: $SHARDS
     separated_workspace: true
   doc_indexer:
-    yaml_path: yaml/index-doc.yml
+    uses: yaml/index-doc.yml
     needs: loader
   join_all:
-    yaml_path: _merge
+    uses: _merge
     needs: [doc_indexer, chunk_indexer]
     read_only: true
 ```
@@ -164,32 +164,32 @@ with:
   port_expose: $JINA_PORT
 pods:
   loader:
-    yaml_path: yaml/craft-load.yml
+    uses: yaml/craft-load.yml
     read_only: true
     replicas: $REPLICAS
   flipper:
-    yaml_path: yaml/craft-flip.yml
+    uses: yaml/craft-flip.yml
     replicas: $REPLICAS
     read_only: true
   normalizer:
-    yaml_path: yaml/craft-normalize.yml
+    uses: yaml/craft-normalize.yml
     read_only: true
     replicas: $REPLICAS
   encoder:
-    image: jinaai/hub.executors.encoders.image.facenet
+    uses: jinaai/hub.executors.encoders.image.facenet
     timeout_ready: 600000
     replicas: $REPLICAS
     read_only: true
   chunk_indexer:
-    yaml_path: yaml/index-chunk.yml
+    uses: yaml/index-chunk.yml
     separated_workspace: true
     polling: all
     replicas: $SHARDS
-    reducing_yaml_path: _merge_topk_chunks
+    uses_reducing: _merge_topk_chunks
   ranker:
-    yaml_path: MinRanker
+    uses: MinRanker
   doc_indexer:
-    yaml_path: yaml/index-doc.yml
+    uses: yaml/index-doc.yml
 ```
 
 </sub>
@@ -220,7 +220,7 @@ In the YAML file, we add the `encoder` Pod in a different way from the other Pod
 !Flow
 pods:
   encoder:
-    image: jinaai/hub.executors.encoders.image.facenet
+    uses: jinaai/hub.executors.encoders.image.facenet
 ```
 
 This way we can pass the image  tag of docker container containing the Encoder
@@ -267,7 +267,7 @@ RUN python -c "from facenet_pytorch import InceptionResnetV1; model = InceptionR
 
 COPY . /
 
-ENTRYPOINT ["jina", "pod", "--yaml-path", "encode.yml"]
+ENTRYPOINT ["jina", "pod", "--uses", "encode.yml"]
 
 ```
 

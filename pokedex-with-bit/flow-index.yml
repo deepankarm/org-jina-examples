@@ -3,21 +3,21 @@ with:
   logserver: true
 pods:
   crafter:
-    yaml_path: pods/craft.yml
+    uses: pods/craft.yml
     read_only: true
   encoder:
-    yaml_path: pods/encode.yml
-#    yaml_path: pods/encode-baseline.yml
+    uses: pods/encode.yml
+#    uses: pods/encode-baseline.yml
     replicas: $REPLICAS
     timeout_ready: 600000
     read_only: true
   chunk_idx:
-    yaml_path: pods/chunk.yml
+    uses: pods/chunk.yml
     replicas: $SHARDS
     separated_workspace: true
   doc_idx:
-    yaml_path: pods/doc.yml
+    uses: pods/doc.yml
     needs: gateway
   join_all:
-    yaml_path: _merge
+    uses: _merge
     needs: [doc_idx, chunk_idx]

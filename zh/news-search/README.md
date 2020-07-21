@@ -79,25 +79,25 @@ python prepare_data.py
 !Flow
 pods:
   doc_indexer:
-    yaml_path: doc_indexer.yml
+    uses: doc_indexer.yml
     replicas: 2
 
   extractor:
-    yaml_path: extractor.yml
+    uses: extractor.yml
     needs: gateway
     replicas: 2
 
   encoder:
-    image: jinaai/examples.hub.encoder.nlp.transformers-hit-scir
+    uses: jinaai/examples.hub.encoder.nlp.transformers-hit-scir
     timeout_ready: 60000
     replicas: 2
 
   chunk_indexer:
-    yaml_path: chunk_indexer.yml
+    uses: chunk_indexer.yml
     replicas: 2
 
   join:
-    yaml_path: _merger
+    uses: _merger
     needs: [doc_indexer, chunk_indexer]
 ```
 
@@ -125,24 +125,24 @@ pods:
 !Flow
 pods:
   extractor:
-    yaml_path: extractor.yml
+    uses: extractor.yml
     replicas: 2
 
   encoder:
-    image: jinaai/examples.hub.encoder.nlp.transformers-hit-scir
+    uses: jinaai/examples.hub.encoder.nlp.transformers-hit-scir
     timeout_ready: 6000000
     replicas: 2
 
   chunk_indexer:
-    yaml_path: chunk_indexer.yml
+    uses: chunk_indexer.yml
     replicas: 2
 
   ranker:
-    yaml_path: ranker.yml
+    uses: ranker.yml
     replicas: 2
 
   doc_indexer:
-    yaml_path: doc_indexer.yml
+    uses: doc_indexer.yml
     replicas: 2
 ```
 
@@ -170,7 +170,7 @@ pods:
 ```yaml
 !Flow
 encoder:
-    image: jinaai/examples.hub.encoder.nlp.transformers-hit-scir
+    uses: jinaai/examples.hub.encoder.nlp.transformers-hit-scir
 ```
 
 ### 弹性扩展🚀
@@ -182,7 +182,7 @@ encoder:
 ```yaml
 !Flow
 encoder:
-    image: jinaai/examples.hub.encoder.nlp.transformers-hit-scir
+    uses: jinaai/examples.hub.encoder.nlp.transformers-hit-scir
     replicas: 2
 ```
 
@@ -324,7 +324,7 @@ class WeightBiMatchRanker(BiMatchRanker):
 
 1. jina中Document可以包含多个Chunk。Chunk是jina建立索引和查询的最基本处理单元。
 
-2. jina支持容器化，只需要在定义Pod时将`yaml_path`字段更改为`image`，并添加相应镜像的名称。
+2. jina支持容器化，只需要在定义Pod时将`uses`字段更改为`image`，并添加相应镜像的名称。
 
 3. jina支持弹性扩展，只需要在Pod中增加`replicas`字段。
 

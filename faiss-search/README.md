@@ -93,22 +93,22 @@ metas:
   prefetch: 10
 pods:
   crafter:
-    yaml_path: yaml/craft.yml
+    uses: yaml/craft.yml
     replicas: $REPLICAS
   encoder:
-    yaml_path: yaml/encode.yml
+    uses: yaml/encode.yml
     replicas: $REPLICAS
   faiss_indexer:
-    image: jinaai/hub.executors.indexers.vector.faiss:latest
+    uses: jinaai/hub.executors.indexers.vector.faiss:latest
     replicas: $REPLICAS
     timeout_ready: 10000
-    yaml_path: yaml/index-chunk.yml
+    uses_internal: yaml/index-chunk.yml
     volumes: './workspace'
   doc_indexer:
-    yaml_path: yaml/index-doc.yml
+    uses: yaml/index-doc.yml
     needs: crafter
   join_all:
-    yaml_path: _merge
+    uses: _merge
     needs: [doc_indexer, faiss_indexer]
     read_only: true
 ```
@@ -133,21 +133,21 @@ with:
   read_only: true
 pods:
   crafter:
-    yaml_path: yaml/craft.yml
+    uses: yaml/craft.yml
     replicas: $REPLICAS
   encoder:
-    yaml_path: yaml/encode.yml
+    uses: yaml/encode.yml
     replicas: $REPLICAS
   faiss_indexer:
-    image: jinaai/hub.executors.indexers.vector.faiss:latest
+    uses: jinaai/hub.executors.indexers.vector.faiss:latest
     replicas: $REPLICAS
     timeout_ready: 10000
-    yaml_path: yaml/index-chunk.yml
+    uses_internal: yaml/index-chunk.yml
     volumes: './workspace'
   ranker:
-    yaml_path: MinRanker
+    uses: MinRanker
   doc_indexer:
-    yaml_path: yaml/index-doc.yml
+    uses: yaml/index-doc.yml
 ```
 
 </sub>

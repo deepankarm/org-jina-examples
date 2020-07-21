@@ -98,17 +98,17 @@ However, we have another Pod working in silent. Actually, the input to the very 
 !Flow
 pods:
   splitter:
-    yaml_path: yaml/craft-split.yml
+    uses: yaml/craft-split.yml
   encoder:
-    yaml_path: yaml/encode.yml
+    uses: yaml/encode.yml
     timeout_ready: 60000
   chunk_indexer:
-    yaml_path: yaml/index-chunk.yml
+    uses: yaml/index-chunk.yml
   doc_indexer:
-    yaml_path: yaml/index-doc.yml
+    uses: yaml/index-doc.yml
     needs: gateway
   join_all:
-    yaml_path: _merge
+    uses: _merge
     needs: [doc_indexer, chunk_indexer]
 ```
 
@@ -125,7 +125,7 @@ By default, the input of each Pod is the Pod defined right above it, and the req
 
 ```yaml
 doc_indexer:
-  yaml_path: yaml/index-doc.yml
+  uses: yaml/index-doc.yml
   needs: gateway
 ```
 
@@ -133,7 +133,7 @@ As we can see, for most Pods, we only need to define the YAML file path. Given t
 
 ```yaml
 encoder:
-  yaml_path: yaml/encode.yml
+  uses: yaml/encode.yml
   timeout_ready: 60000
 ```
 
@@ -141,7 +141,7 @@ You might also notice the `join_all` Pod has a special YAML path. It denotes a b
 
 ```yaml
 join_all:
-  yaml_path: _merge
+  uses: _merge
   needs: [doc_indexer, chunk_indexer]
 ```
 
@@ -170,16 +170,16 @@ with:
   read_only: true
 pods:
   splitter:
-    yaml_path: yaml/craft-split.yml
+    uses: yaml/craft-split.yml
   encoder:
-    yaml_path: yaml/encode.yml
+    uses: yaml/encode.yml
     timeout_ready: 60000
   chunk_indexer:
-    yaml_path: yaml/index-chunk.yml
+    uses: yaml/index-chunk.yml
   ranker:
-    yaml_path: BM25Ranker
+    uses: BM25Ranker
   doc_indexer:
-    yaml_path: yaml/index-doc.yml
+    uses: yaml/index-doc.yml
 ```
 
 </sub>
@@ -196,7 +196,7 @@ Eventually, here comes a new Pod with the name of `ranker`. Remember that Chunks
 
 ```yaml
 ranker:
-  yaml_path: BM25Ranker
+  uses: BM25Ranker
 ```
 
 At the last step, the `doc_indexer` comes into play. Sharing the same YAML file, `doc_indexer` will load the storaged key-value index and retrieve the matched Documents back according the Document Id.

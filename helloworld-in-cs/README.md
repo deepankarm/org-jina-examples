@@ -46,7 +46,7 @@ import threading
 
 # ...
 
-f = Flow.load_config(args.index_yaml_path)
+f = Flow.load_config(args.index_uses)
 # run it!
 with f:
     threading.Event().wait()

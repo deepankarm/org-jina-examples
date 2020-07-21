@@ -80,21 +80,21 @@ python prepare_data.py
 !Flow
 pods:
   doc_indexer:
-    yaml_path: doc_indexer.yml
+    uses: doc_indexer.yml
 
   extractor:
-    yaml_path: extractor.yml
+    uses: extractor.yml
     needs: gateway
 
   encoder:
-    yaml_path: encoder.yml
+    uses: encoder.yml
     timeout_ready: 60000
 
   chunk_indexer:
-    yaml_path: chunk_indexer.yml
+    uses: chunk_indexer.yml
 
   join:
-    yaml_path: _merger
+    uses: _merger
     needs: [doc_indexer, chunk_indexer]
 ```
 
@@ -129,11 +129,11 @@ pods:
 
    介绍完各个Pod的作用，接下来，我们具体看看每个Pod如何定义的。
 
-    我们通过`yaml_path`指定Pod的YAML文件地址。Flow中的信息传递默认是按照YAML文件中定义的顺序自上而下依次执行的。在特殊情况下，我们也通过`needs`指定接受哪个Pod的请求。例如在`extractor`这个Pod中，我们定义Pod的YAML文件地址为`extractor.yml`，接受来自`gateway`的请求，而不是上方的`doc_indexer`。
+    我们通过`uses`指定Pod的YAML文件地址。Flow中的信息传递默认是按照YAML文件中定义的顺序自上而下依次执行的。在特殊情况下，我们也通过`needs`指定接受哪个Pod的请求。例如在`extractor`这个Pod中，我们定义Pod的YAML文件地址为`extractor.yml`，接受来自`gateway`的请求，而不是上方的`doc_indexer`。
 
 ```yaml
 extractor:
-    yaml_path: extractor.yml
+    uses: extractor.yml
     needs: gateway
 ```
 
@@ -141,14 +141,14 @@ extractor:
 
 ```yaml
 chunk_indexer:
-    yaml_path: chunk_indexer.yml
+    uses: chunk_indexer.yml
 ```
 
     如果一个Pod加载耗时很长，而在jina中Pod的默认加载时间为5s，我们则需要指定`timeout_ready`。例如在`encoder`这个Pod，我们指定它的加载时间为60s。
 
 ```yaml
 encoder:
-  yaml_path: encode.yml
+  uses: encode.yml
   timeout_ready: 60000
 ```
 
@@ -189,20 +189,20 @@ encoder:
 !Flow
 pods:
   extractor:
-    yaml_path: extractor.yml
+    uses: extractor.yml
 
   encoder:
-    yaml_path: encoder.yml
+    uses: encoder.yml
     timeout_ready: 60000
 
   chunk_indexer:
-    yaml_path: chunk_indexer.yml
+    uses: chunk_indexer.yml
 
   ranker:
-    yaml_path: ranker.yml
+    uses: ranker.yml
 
   doc_indexer:
-    yaml_path: doc_indexer.yml
+    uses: doc_indexer.yml
 ```
 
 </sub>
@@ -459,11 +459,11 @@ requests:
 
 ### join
 
-    在定义Flow时，我们提到`join`的作用是等待并合并两条并行流程的信息，并执行下面的任务。在指定`join`的`yaml_path`时，我们只需指定`yaml_path`为`_merge`，这样jina就会调用内部默认的`join` Pod的YAML文件。
+    在定义Flow时，我们提到`join`的作用是等待并合并两条并行流程的信息，并执行下面的任务。在指定`join`的`uses`时，我们只需指定`uses`为`_merge`，这样jina就会调用内部默认的`join` Pod的YAML文件。
 
 ```python
 join:
-    yaml_path: _merge
+    uses: _merge
     needs: [chunk_indexer, doc_indexer]
 ```
 

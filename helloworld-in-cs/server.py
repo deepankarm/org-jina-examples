@@ -25,7 +25,7 @@ def hello_world(args):
     # now comes the real work
     # load index flow from a YAML file
 
-    f = Flow.load_config(args.index_yaml_path)
+    f = Flow.load_config(args.index_uses)
     # run it!
     with f:
         default_logger.success(f'hello-world server is started at {f.host}:{f.port_expose}, '
