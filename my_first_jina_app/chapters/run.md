@@ -8,7 +8,7 @@
 
 Our goal is to find out who said what in South Park episodes when a user queries a phrase. The [SouthPark dataset](https://github.com/BobAdamsEE/SouthParkData/) contains the characters and lines from seasons 1 to 19. Many thanks to [BobAdamsEE](https://github.com/BobAdamsEE) for sharing this awesome resource!👏
 
-The raw data contains season, episode, character, and line information in the `.csv` format as follows:
+After downloading and processing, you'll get `character-lines.csv`, which looks like:
 
 ```csv
 Stan! I don't wanna talk about it, I jus' wanna leave.
@@ -23,7 +23,7 @@ Jimbo! Here we are at Shafer's Crossing, lookin' for some animals.
 Kyle! it's okay.
 ```
 
-Now let's ensure we're back in our base folder and download this dataset by running:
+Now let's ensure we're back in our base folder and download and process this dataset by running:
 
 ```bash
 cd ..
