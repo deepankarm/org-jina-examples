@@ -6,7 +6,7 @@ First of all, read up on [Jina 101](https://github.com/jina-ai/jina/tree/master/
 
 ## 🧪 Try it Out!
 
-Before actually downloading, configuring and testing your app, let's get an idea of the finished product:
+Before going through the trouble of downloading, configuring and testing your app, let's get an idea of the finished product:
 
 ### Deploy with Docker
 
@@ -191,7 +191,7 @@ You'll need:
 * 8 gigabytes or more of RAM
 * Plenty of time - Indexing can take a while!
 
-You should have also read [key concepts](#key-concepts) to get a good overview of how Jina and this example work.
+You should have also read the key concepts at the top of this page to get a good overview of how Jina and this example work.
 
 ### Clone this repo
 
