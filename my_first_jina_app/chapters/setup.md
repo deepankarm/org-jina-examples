@@ -22,7 +22,7 @@ Note: You'll need to run the Docker image before trying the steps below
 
 #### Query with Jinabox
 
-![](../images/jinabox-southpark.gif)
+![](./images/jinabox-southpark.gif)
 
 1. Go to [jinabox](https://jina.ai/jinabox.js) in your browser
 2. Ensure you have the server endpoint set to `http://localhost:45678/api/search`
