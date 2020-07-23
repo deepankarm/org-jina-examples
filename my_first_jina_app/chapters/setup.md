@@ -191,7 +191,7 @@ You'll need:
 * 8 gigabytes or more of RAM
 * Plenty of time - Indexing can take a while!
 
-You should have also read [key concepts](concepts.md) to get a good overview of how Jina and this example work.
+You should have also read [key concepts](#key-concepts) to get a good overview of how Jina and this example work.
 
 ### Clone this repo
 
