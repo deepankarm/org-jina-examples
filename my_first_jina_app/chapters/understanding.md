@@ -255,10 +255,12 @@ While the two Flows share (most of) the same Pods, there are some differences in
 
 #### Request Messages
 
-XXX @nan - this seems more gRPCish - how would it work for RESTful?
+In our RESTful API we set the `mode` field in the JSON body and send the request to the corresponding API:
 
-* For indexing, we send an **IndexRequest** to the Flow
-* For querying, we send a **SearchRequest** to the Flow
+| API endpoint | JSON
+| ---          | ---                  |
+| `api/index`  | `{"mode": "index"}`  |
+| `api/search` | `{"mode": "search"}` |
 
 This is how Pods in both Flows can play different roles while sharing the same YAML files.
 
