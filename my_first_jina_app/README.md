@@ -25,7 +25,7 @@ Our example program will be a simple neural search engine for text. It will take
 <table width="100%">
   <tr>
     <td align="right" style="text-align:right">
-      <strong><a href="./setup.md">Next: Setup ➡️</a></strong>
+      <strong><a href="./chapters/setup.md">Next: Setup ➡️</a></strong>
     </td>
   </tr>
 </table>
