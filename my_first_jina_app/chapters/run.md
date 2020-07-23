@@ -8,21 +8,6 @@
 
 Our goal is to find out who said what in South Park episodes when a user queries a phrase. The [SouthPark dataset](https://github.com/BobAdamsEE/SouthParkData/) contains the characters and lines from seasons 1 to 19. Many thanks to [BobAdamsEE](https://github.com/BobAdamsEE) for sharing this awesome resource!👏
 
-After downloading and processing, you'll get `character-lines.csv`, which looks like:
-
-```csv
-Stan! I don't wanna talk about it, I jus' wanna leave.
-Mysterion! Mrs.
-Sally! Pa-pa.
-Canadians! We want respect!
-Phillip! That smelly Saddam Hussein.
-Cartman! Strike me down while you can!
-Morpheus! What if I were to tell you.
-Kanye! Yep, got it.
-Jimbo! Here we are at Shafer's Crossing, lookin' for some animals.
-Kyle! it's okay.
-```
-
 Now let's ensure we're back in our base folder and download and process this dataset by running:
 
 ```bash
@@ -45,7 +30,7 @@ Resolving deltas: 100% (40/40), done.
 
 ## Load the Data
 
-Now that we've got the data, we need to pass it into `app.py`. `app.py` is pretty simple out of the box, so we'll have to make some changes:
+Now that `get_data.sh` has downloaded the data (and called `process_data.py` to process it), we've got `character-lines.csv`. We need to pass this file into `app.py`. `app.py` is pretty simple out of the box, so we'll have to make some changes:
 
 ### Check the Data
 
