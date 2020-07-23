@@ -5,7 +5,11 @@ import sys
 
 from jina.flow import Flow
 
+<<<<<<< HEAD
 num_docs = os.environ.get('MAX_DOCS', 500)
+=======
+num_docs = os.environ.get('MAX_DOCS', 50)
+>>>>>>> 129244a... docs(my-first-app): update and restructure
 data_path = os.path.join('data','character-lines.csv')
 
 def config():
