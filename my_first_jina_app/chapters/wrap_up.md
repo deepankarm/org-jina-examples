@@ -1,6 +1,6 @@
 # My First Jina App
 
-## Wrap Up
+## 🎁 Wrap Up
 
 In this tutorial you've learned:
 
