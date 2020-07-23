@@ -16,8 +16,6 @@ We've prepared a Docker image with indexed data. You can run it with:
 docker run -p 45678:45678 jinaai/hub.app.distilbert-southpark
 ```
 
-Check out more details about the Docker image [here](rest-api/README.md).
-
 Note: You'll need to run the Docker image before trying the steps below
 
 #### Query with Jinabox
