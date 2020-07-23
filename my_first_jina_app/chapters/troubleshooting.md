@@ -33,7 +33,7 @@ sudo apt-get install <package_name>
       <strong><a href="./run.md">⬅️ Previous: Running the App</a></strong>
     </td>
     <td align="right" style="text-align:right">
-      <strong><a href="./understanding.md">Next: Understanding ➡️</a></strong>
+      <strong><a href="./wrap_up.md">Next: Wrap up ➡️</a></strong>
     </td>
   </tr>
 </table>
