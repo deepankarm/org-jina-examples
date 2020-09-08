@@ -1,3 +1,18 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**
+
+- [Build a CrossModal Search System to look for Images from Captions and viceversa](#build-a-crossmodal-search-system-to-look-for-images-from-captions-and-viceversa)
+  - [Prerequirements](#prerequirements)
+  - [Prepare the data](#prepare-the-data)
+  - [Build the docker images](#build-the-docker-images)
+  - [Run the Flows](#run-the-flows)
+  - [Documentation](#documentation)
+  - [Community](#community)
+  - [License](#license)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Build a CrossModal Search System to look for Images from Captions and viceversa
 <p align="center">
  
